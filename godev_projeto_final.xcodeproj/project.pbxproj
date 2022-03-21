@@ -10,7 +10,6 @@
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
 		883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3327E8D6FA00714341 /* SceneDelegate.swift */; };
 		883AAF3627E8D6FA00714341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3527E8D6FA00714341 /* ViewController.swift */; };
-		883AAF3927E8D6FA00714341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883AAF3727E8D6FA00714341 /* Main.storyboard */; };
 		883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3A27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld */; };
 		883AAF3E27E8D6FA00714341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 883AAF3D27E8D6FA00714341 /* Assets.xcassets */; };
 		883AAF4127E8D6FA00714341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 883AAF3F27E8D6FA00714341 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		883AAF3127E8D6FA00714341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883AAF3327E8D6FA00714341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		883AAF3527E8D6FA00714341 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		883AAF3827E8D6FA00714341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		883AAF3B27E8D6FA00714341 /* godev_projeto_final.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = godev_projeto_final.xcdatamodel; sourceTree = "<group>"; };
 		883AAF3D27E8D6FA00714341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		883AAF4027E8D6FA00714341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,14 +99,10 @@
 		883AAF3027E8D6FA00714341 /* godev_projeto_final */ = {
 			isa = PBXGroup;
 			children = (
-				883AAF3127E8D6FA00714341 /* AppDelegate.swift */,
-				883AAF3327E8D6FA00714341 /* SceneDelegate.swift */,
-				883AAF3527E8D6FA00714341 /* ViewController.swift */,
-				883AAF3727E8D6FA00714341 /* Main.storyboard */,
-				883AAF3D27E8D6FA00714341 /* Assets.xcassets */,
-				883AAF3F27E8D6FA00714341 /* LaunchScreen.storyboard */,
-				883AAF4227E8D6FA00714341 /* Info.plist */,
-				883AAF3A27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld */,
+				883AAF6427E8D85D00714341 /* Delegates */,
+				883AAF6527E8D86700714341 /* Controllers */,
+				883AAF6627E8D89700714341 /* Resources */,
+				883AAF6727E8D8A500714341 /* CoreData */,
 			);
 			path = godev_projeto_final;
 			sourceTree = "<group>";
@@ -128,6 +122,41 @@
 				883AAF5727E8D6FA00714341 /* godev_projeto_finalUITestsLaunchTests.swift */,
 			);
 			path = godev_projeto_finalUITests;
+			sourceTree = "<group>";
+		};
+		883AAF6427E8D85D00714341 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3127E8D6FA00714341 /* AppDelegate.swift */,
+				883AAF3327E8D6FA00714341 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		883AAF6527E8D86700714341 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3527E8D6FA00714341 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		883AAF6627E8D89700714341 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3D27E8D6FA00714341 /* Assets.xcassets */,
+				883AAF3F27E8D6FA00714341 /* LaunchScreen.storyboard */,
+				883AAF4227E8D6FA00714341 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		883AAF6727E8D8A500714341 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3A27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +265,6 @@
 			files = (
 				883AAF4127E8D6FA00714341 /* LaunchScreen.storyboard in Resources */,
 				883AAF3E27E8D6FA00714341 /* Assets.xcassets in Resources */,
-				883AAF3927E8D6FA00714341 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +329,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		883AAF3727E8D6FA00714341 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				883AAF3827E8D6FA00714341 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		883AAF3F27E8D6FA00714341 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -445,10 +465,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RP8CYUW3M3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = godev_projeto_final/Info.plist;
+				INFOPLIST_FILE = "/Users/victorpizetta/Desktop/Victor/Desafio Final - go!Dev/godev_projeto_final/godev_projeto_final/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,10 +492,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RP8CYUW3M3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = godev_projeto_final/Info.plist;
+				INFOPLIST_FILE = "/Users/victorpizetta/Desktop/Victor/Desafio Final - go!Dev/godev_projeto_final/godev_projeto_final/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
