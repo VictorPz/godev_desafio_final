@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
+		882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* GitHubRepo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
 		883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3327E8D6FA00714341 /* SceneDelegate.swift */; };
 		883AAF3627E8D6FA00714341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3527E8D6FA00714341 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
+		882CC20D27EA12A7009FA401 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883AAF3127E8D6FA00714341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883AAF3327E8D6FA00714341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		882CC20927EA06B9009FA401 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				882CC20A27EA06EE009FA401 /* githubApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		882CC20C27EA129A009FA401 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		883AAF2527E8D6F900714341 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,8 @@
 		883AAF3027E8D6FA00714341 /* godev_projeto_final */ = {
 			isa = PBXGroup;
 			children = (
+				882CC20C27EA129A009FA401 /* Models */,
+				882CC20927EA06B9009FA401 /* Service */,
 				883AAF6427E8D85D00714341 /* Delegates */,
 				883AAF6527E8D86700714341 /* Controllers */,
 				883AAF6627E8D89700714341 /* Resources */,
@@ -290,8 +312,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
+				882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */,
 				883AAF3627E8D6FA00714341 /* ViewController.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
+				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
 				883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
