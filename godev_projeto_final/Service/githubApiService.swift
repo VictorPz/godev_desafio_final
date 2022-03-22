@@ -30,8 +30,8 @@ class githubApiService: ServiceProtocol {
     
     func fetchList(for repository: String, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void) {
         
-        let search = "q=\(repository)"
-        let comp = "+language:swift&sort=stars&order=desc&per_page=30"
+        let search = "q=\(repository)+in:name+"
+        let comp = "language:swift&sort=stars&order=desc&per_page=30"
         let queryUrl = "\(baseUrl)\(search)\(comp)"
         
         guard let url = URL(string: queryUrl) else {return completion(.failure(.urlInvalid))}
