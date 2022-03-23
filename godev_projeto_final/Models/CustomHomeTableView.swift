@@ -22,6 +22,7 @@ class CustomHomeTableView: UIView {
     
     init() {
         super.init(frame: .zero)
+        tableView.reloadData()
         setupView()
     }
 
@@ -38,8 +39,8 @@ extension CustomHomeTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell else {return UITableViewCell()}
-        let repo = gitHubRepo[indexPath.row]
-        cell.updateView(repo: repo)
+        //let repo = gitHubRepo[indexPath.row]
+        //cell.updateView(repo: repo)
         return cell
     }
 }

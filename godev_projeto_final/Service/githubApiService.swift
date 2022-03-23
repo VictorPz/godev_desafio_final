@@ -51,7 +51,6 @@ class githubApiService: ServiceProtocol {
                 completion(.failure(.noProcessData))
             }
         }
-        
         dataTask.resume()
     }
 }
