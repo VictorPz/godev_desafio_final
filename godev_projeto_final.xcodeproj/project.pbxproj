@@ -18,6 +18,7 @@
 		883AAF4C27E8D6FA00714341 /* godev_projeto_finalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF4B27E8D6FA00714341 /* godev_projeto_finalTests.swift */; };
 		883AAF5627E8D6FA00714341 /* godev_projeto_finalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF5527E8D6FA00714341 /* godev_projeto_finalUITests.swift */; };
 		883AAF5827E8D6FA00714341 /* godev_projeto_finalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF5727E8D6FA00714341 /* godev_projeto_finalUITestsLaunchTests.swift */; };
+		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		883AAF5127E8D6FA00714341 /* godev_projeto_finalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = godev_projeto_finalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		883AAF5527E8D6FA00714341 /* godev_projeto_finalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = godev_projeto_finalUITests.swift; sourceTree = "<group>"; };
 		883AAF5727E8D6FA00714341 /* godev_projeto_finalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = godev_projeto_finalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +106,7 @@
 				883AAF4A27E8D6FA00714341 /* godev_projeto_finalTests */,
 				883AAF5427E8D6FA00714341 /* godev_projeto_finalUITests */,
 				883AAF2F27E8D6FA00714341 /* Products */,
+				A842E5D927EA5ACC0014E63B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +183,14 @@
 				883AAF3A27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A842E5D927EA5ACC0014E63B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A842E5DA27EA5ACC0014E63B /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +506,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +516,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,6 +534,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,7 +544,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
