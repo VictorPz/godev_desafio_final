@@ -23,24 +23,48 @@ class CustomHomeTableView: UIView {
     init() {
         super.init(frame: .zero)
         tableView.reloadData()
+        tableView.showsVerticalScrollIndicator = false
+        
+        //Tamanho da celula - Rafael
+        tableView.rowHeight = 90
+        
+        //Sumir com o separador da celula - Rafael
+        tableView.separatorColor = UIColor.clear
+        dataGit()
         setupView()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    private func collectionLayout() {
+//        let layout = UITableView()
+//        layout.itemSize = CGSize(width: 90, height: 90)
+//        layout.minimumLineSpacing = 10
+//        layout.scrollDirection = .horizontal
+//        tableView.collectionViewLayout = layout
+//    }
+    
+    //Dados mocados - Rafael
+    private func dataGit() {
+        gitHubRepo = [
+            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License")),
+            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License"))
+        ]
+    }
 }
 
 extension CustomHomeTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return gitHubRepo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell else {return UITableViewCell()}
-        //let repo = gitHubRepo[indexPath.row]
-        //cell.updateView(repo: repo)
+        let repo = gitHubRepo[indexPath.row]
+        cell.updateView(repo: repo)
         return cell
     }
 }
@@ -60,3 +84,5 @@ extension CustomHomeTableView: ViewCodable {
         ])
     }
 }
+
+

@@ -12,13 +12,13 @@ class HomeViewController: UIViewController {
     let tableView = CustomHomeTableView()
     let searchController = UISearchController(searchResultsController: nil)
     
-//    override func loadView() {
-//        self.view = self.tableView
-//    }
+    override func loadView() {
+        self.navigationControllerSetup()
+        self.view = self.tableView
+    }
         
     override func viewDidLoad() {
         view.backgroundColor = .systemBackground
-        self.navigationControllerSetup()
     }
     
     private func navigationControllerSetup() {
@@ -30,6 +30,8 @@ class HomeViewController: UIViewController {
      private func searchBarControllerSetup() {
          searchController.searchResultsUpdater = self
          searchController.searchBar.placeholder = "Pesquisa"
+         //Não consegui deixar a searchBar no tamanho 45 - verificar - Rafael
+         searchController.searchBar.frame.size.height = 45
          searchController.hidesNavigationBarDuringPresentation = false
          searchController.searchBar.delegate = self
      }
@@ -42,6 +44,7 @@ extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        print("list info \(String(describing: searchController.searchBar.text))")
     }
     
     
