@@ -19,32 +19,24 @@ class CustomHomeTableView: UIView {
         tableView.delegate = self
         return tableView
     }()
-    
     init() {
         super.init(frame: .zero)
         tableView.reloadData()
         tableView.showsVerticalScrollIndicator = false
-        
-        //Tamanho da celula - Rafael
-        tableView.rowHeight = 90
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //Sumir com o separador da celula - Rafael
         tableView.separatorColor = UIColor.clear
         dataGit()
         setupView()
+        
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    private func collectionLayout() {
-//        let layout = UITableView()
-//        layout.itemSize = CGSize(width: 90, height: 90)
-//        layout.minimumLineSpacing = 10
-//        layout.scrollDirection = .horizontal
-//        tableView.collectionViewLayout = layout
-//    }
     
     //Dados mocados - Rafael
     private func dataGit() {

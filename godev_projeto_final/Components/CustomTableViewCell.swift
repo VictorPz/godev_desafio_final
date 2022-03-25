@@ -15,11 +15,11 @@ class CustomTableViewCell: UITableViewCell {
     
     private lazy var verticalStack: UIStackView = {
         let stack  = UIStackView(frame: .zero)
-        stack.alignment = .fill
-        //stack.spacing = 8
-        stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillProportionally
+        stack.alignment = .fill
+        stack.contentMode = .top
+        stack.spacing = 8
+        stack.axis = .vertical
         return stack
     }()
         
@@ -93,14 +93,16 @@ extension CustomTableViewCell: ViewCodable {
             ownerImage.widthAnchor.constraint(equalToConstant: 85),
             ownerImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             ownerImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            //ownerImage.topAnchor.constraint(lessThanOrEqualTo: topAnchor, constant: 10),
+            //ownerImage.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10),
             
             //Como está dentro de uma stack view não precisa desses caras, pois ele quebra o layout - Rafael
             //repositoryTitle.heightAnchor.constraint(equalToConstant: 20),
             //repositoryDescription.heightAnchor.constraint(equalTo: heightAnchor, constant: 50),
             
-            verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+            verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             verticalStack.leadingAnchor.constraint(equalTo: ownerImage.trailingAnchor, constant: 10),
-            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 8),
+            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
             verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35)
             
             
