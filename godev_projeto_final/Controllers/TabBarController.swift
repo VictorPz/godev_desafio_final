@@ -12,7 +12,7 @@ final class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        tabBar.backgroundColor = #colorLiteral(red: 0.9078438878, green: 0.9430786371, blue: 0.9424690008, alpha: 1)
+        tabBar.backgroundColor = .systemBackground
         tabBar.tintColor = .label
         setupViewControllers()
     }
@@ -21,6 +21,7 @@ final class TabBarController: UITabBarController {
                                      navigationTitle: String,
                                      image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: rootViewController)
+        navController.navigationBar.barTintColor = .systemBackground
         navController.tabBarItem.title = title
         navController.tabBarItem.image = image
         rootViewController.navigationItem.title = navigationTitle
