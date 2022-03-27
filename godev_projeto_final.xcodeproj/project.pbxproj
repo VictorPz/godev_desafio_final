@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EF55C2327F0CDEC00FB9247 /* CustomTeamTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C2227F0CDEC00FB9247 /* CustomTeamTableView.swift */; };
+		5EF55C2527F0CE4F00FB9247 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C2427F0CE4F00FB9247 /* Team.swift */; };
+		5EF55C2727F0D20D00FB9247 /* CustomTableViewCellTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C2627F0D20D00FB9247 /* CustomTableViewCellTeam.swift */; };
 		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
 		882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* GitHubRepo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5EF55C2227F0CDEC00FB9247 /* CustomTeamTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTeamTableView.swift; sourceTree = "<group>"; };
+		5EF55C2427F0CE4F00FB9247 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5EF55C2627F0D20D00FB9247 /* CustomTableViewCellTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellTeam.swift; sourceTree = "<group>"; };
 		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
 		882CC20D27EA12A7009FA401 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,8 @@
 			children = (
 				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
 				8896C0DB27EB7D4B001674DD /* CustomHomeTableView.swift */,
+				5EF55C2227F0CDEC00FB9247 /* CustomTeamTableView.swift */,
+				5EF55C2427F0CE4F00FB9247 /* Team.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				8896C0DE27EB8085001674DD /* CustomTableViewCell.swift */,
 				8896C0E027EB809E001674DD /* UIImageView+Extension.swift */,
 				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
+				5EF55C2627F0D20D00FB9247 /* CustomTableViewCellTeam.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -355,14 +364,17 @@
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
 				8896C0DF27EB8085001674DD /* CustomTableViewCell.swift in Sources */,
+				5EF55C2527F0CE4F00FB9247 /* Team.swift in Sources */,
 				882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */,
 				883AAF3627E8D6FA00714341 /* TabBarController.swift in Sources */,
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
+				5EF55C2327F0CDEC00FB9247 /* CustomTeamTableView.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
 				8896C0D627EB6B14001674DD /* HomeViewController.swift in Sources */,
 				8896C0D827EB6CB0001674DD /* FavoriteViewController.swift in Sources */,
+				5EF55C2727F0D20D00FB9247 /* CustomTableViewCellTeam.swift in Sources */,
 				8896C0DA27EB6CD1001674DD /* TeamViewController.swift in Sources */,
 				883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */,
 			);
