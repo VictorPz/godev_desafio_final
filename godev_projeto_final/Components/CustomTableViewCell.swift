@@ -36,7 +36,7 @@ class CustomTableViewCell: UITableViewCell {
         let description = UILabel()
         description.translatesAutoresizingMaskIntoConstraints = false
         description.textColor = UIColor.black
-        description.numberOfLines = 0
+        description.numberOfLines = 2
         description.font = UIFont.systemFont(ofSize: 14, weight: .light)
         description.textAlignment = .justified
         return description
@@ -104,8 +104,6 @@ extension CustomTableViewCell: ViewCodable {
             verticalStack.leadingAnchor.constraint(equalTo: ownerImage.trailingAnchor, constant: 10),
             verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
             verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35)
-            
-            
         ])
     }
 }
