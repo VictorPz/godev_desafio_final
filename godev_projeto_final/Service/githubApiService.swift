@@ -15,7 +15,7 @@ enum responseError: Error {
 
 protocol ServiceProtocol {
 
-    func fetchList(for repository: String, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void)
+    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void)
 }
 
 class githubApiService: ServiceProtocol {
@@ -28,10 +28,10 @@ class githubApiService: ServiceProtocol {
     let session = URLSession.shared
     let baseUrl = "https://api.github.com/search/repositories?"
     
-    func fetchList(for repository: String, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void) {
+    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void) {
         
-        let search = "q=\(repository)+in:name+"
-        let comp = "language:swift&sort=stars&order=desc&per_page=30"
+        let search = "q="
+        let comp = "language:\(language)&sort=stars&order=\(orderBy ? "desc" : "asc")&per_page=30"
         let queryUrl = "\(baseUrl)\(search)\(comp)"
         
         guard let url = URL(string: queryUrl) else {return completion(.failure(.urlInvalid))}
@@ -39,19 +39,15 @@ class githubApiService: ServiceProtocol {
         let dataTask = session.dataTask(with: url) { data, _ , _ in
             
             do {
-                
                 guard let jsonData = data else { return completion(.failure(.noDataAvailable)) }
                 
                 let decoder = JSONDecoder()
-                let userResponse = try decoder.decode([GitHubRepo].self, from: jsonData)
-                
-                completion(.success(userResponse))
-                
+                let userResponse = try decoder.decode(ApiData.self, from: jsonData)
+                completion(.success(userResponse.items ?? []))
             } catch {
                 completion(.failure(.noProcessData))
             }
         }
-        
         dataTask.resume()
     }
 }
