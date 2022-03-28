@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2669FD8B27F0B0E700E96876 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2669FD8A27F0B0E700E96876 /* CustomLabel.swift */; };
+		2669FD8E27F0B23900E96876 /* UIStackView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2669FD8D27F0B23900E96876 /* UIStackView+extensions.swift */; };
+		2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2669FD8F27F0B28600E96876 /* UIView+extensions.swift */; };
+		26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26706DA627EE6055003A67DD /* DetailGitRepositoryViewController.swift */; };
+		26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */; };
+		26706DAD27EE69EA003A67DD /* CustomHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */; };
 		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
 		882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* GitHubRepo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
@@ -47,6 +53,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2669FD8A27F0B0E700E96876 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		2669FD8D27F0B23900E96876 /* UIStackView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+extensions.swift"; sourceTree = "<group>"; };
+		2669FD8F27F0B28600E96876 /* UIView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extensions.swift"; sourceTree = "<group>"; };
+		26706DA627EE6055003A67DD /* DetailGitRepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGitRepositoryViewController.swift; sourceTree = "<group>"; };
+		26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGitRepositoryView.swift; sourceTree = "<group>"; };
+		26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHorizontalStackView.swift; sourceTree = "<group>"; };
 		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
 		882CC20D27EA12A7009FA401 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +111,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2669FD8C27F0B21100E96876 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8896C0E027EB809E001674DD /* UIImageView+Extension.swift */,
+				2669FD8D27F0B23900E96876 /* UIStackView+extensions.swift */,
+				2669FD8F27F0B28600E96876 /* UIView+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		26706DA827EE60DE003A67DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26706DAB27EE69D2003A67DD /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				2669FD8C27F0B21100E96876 /* Extensions */,
+				26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */,
+				2669FD8A27F0B0E700E96876 /* CustomLabel.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		882CC20927EA06B9009FA401 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +181,8 @@
 		883AAF3027E8D6FA00714341 /* godev_projeto_final */ = {
 			isa = PBXGroup;
 			children = (
+				26706DAB27EE69D2003A67DD /* Commons */,
+				26706DA827EE60DE003A67DD /* View */,
 				8896C0DD27EB806E001674DD /* Components */,
 				883AAF6427E8D85D00714341 /* Delegates */,
 				882CC20C27EA129A009FA401 /* Models */,
@@ -185,6 +227,7 @@
 				8896C0D527EB6B14001674DD /* HomeViewController.swift */,
 				8896C0D727EB6CB0001674DD /* FavoriteViewController.swift */,
 				8896C0D927EB6CD1001674DD /* TeamViewController.swift */,
+				26706DA627EE6055003A67DD /* DetailGitRepositoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				8896C0DE27EB8085001674DD /* CustomTableViewCell.swift */,
-				8896C0E027EB809E001674DD /* UIImageView+Extension.swift */,
 				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
 			);
 			path = Components;
@@ -355,15 +397,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26706DAD27EE69EA003A67DD /* CustomHorizontalStackView.swift in Sources */,
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
+				26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */,
 				8896C0DF27EB8085001674DD /* CustomTableViewCell.swift in Sources */,
+				2669FD8B27F0B0E700E96876 /* CustomLabel.swift in Sources */,
+				26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */,
 				882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */,
 				883AAF3627E8D6FA00714341 /* TabBarController.swift in Sources */,
+				2669FD8E27F0B23900E96876 /* UIStackView+extensions.swift in Sources */,
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
+				2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
 				8896C0D627EB6B14001674DD /* HomeViewController.swift in Sources */,
 				8896C0D827EB6CB0001674DD /* FavoriteViewController.swift in Sources */,
