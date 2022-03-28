@@ -170,7 +170,7 @@ class DetailRepositoryView: UIView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dataInfoLabel.text = dateFormatter.string(from: Date())
-        licenceInfoLabel.text = infoRepo.license.name
+        licenceInfoLabel.text = infoRepo.license?.name
         
     }
     

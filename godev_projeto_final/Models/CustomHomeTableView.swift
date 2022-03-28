@@ -9,7 +9,6 @@ import UIKit
 
 class CustomHomeTableView: UIView {
 
-    var gitHubRepo: [GitHubRepo] = []
     private var gitHubRepo: [GitHubRepo] = [] {
         didSet {
             self.verifyListCount()
@@ -123,7 +122,7 @@ extension CustomHomeTableView: UITableViewDataSource {
     }
 }
 
-extension CustomHomeTableView: UITableViewDelegate, UITableViewDataSource {
+extension CustomHomeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 93
     }
