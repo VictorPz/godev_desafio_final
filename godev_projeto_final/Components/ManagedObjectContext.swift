@@ -141,3 +141,34 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
     }
     
 }
+
+/*
+// SAVE
+let string = "01/02/2016"
+
+let dateFormatter = DateFormatter()
+
+dateFormatter.dateFormat = "dd/MM/yy"
+
+let dateString = dateFormatter.date(from: string)!
+
+let repoTest = CoreDataRepo(id: "1010", name: "Teste 1", image: "image 1", details: "Details 1", author: "Teste 1", viewsCount: 30, createdAt: dateString, license: "MIT", url: "www.google.com")
+
+ManagedObjectContext.shared.saveRepoData(repo: repoTest) { res in
+    print(res)
+}*/
+
+/*
+// GET
+var repoList: [CoreDataRepo] = []
+
+repoList = ManagedObjectContext.shared.getRepoData()
+
+print(repoList)*/
+
+
+/*
+// DELETE
+ManagedObjectContext.shared.deleteRepoData(id: "1010") { res in
+    print(res)
+}*/

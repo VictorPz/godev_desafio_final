@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         view.backgroundColor = .systemBackground
         view.addSubview(tableView)
+        
     }
     
 }
