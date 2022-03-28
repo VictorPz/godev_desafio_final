@@ -9,7 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate {
     
-    private var orderList: Bool = true
+    private var searchText: String = "swift" {
+        didSet {
+            updateData()
+        }
+    }
     
     let tableView = CustomHomeTableView()
     let searchController = UISearchController(searchResultsController: nil)
@@ -53,25 +57,27 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     
     //Função para chamar a ordenação da lista
     @objc private func orderByDescAndAsc() {
-        if orderList {
-            print("ASC")
-            orderList = false
-        } else {
-            print("DESC")
-            orderList = true
-        }
+        tableView.orderBy()
+    }
+    
+    private func updateData() {
+        tableView.dataGit(search: searchText)
     }
     
 }
 
 extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
-    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let newSearch = searchBar.text {
+            searchText = newSearch
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         print("list info \(String(describing: searchController.searchBar.text))")
     }
     
-    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchText = "swift"
+    }
 }
