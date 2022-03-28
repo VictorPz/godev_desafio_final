@@ -33,6 +33,8 @@
 		8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C0E227EB80AA001674DD /* ViewCodable.swift */; };
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
 		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
+		A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */; };
+		A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		8896C0E227EB80AA001674DD /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
+		A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +156,11 @@
 			children = (
 				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
 				8896C0DB27EB7D4B001674DD /* CustomHomeTableView.swift */,
+
+				A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */,
+
 				9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */,
+
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 			children = (
 				8896C0DE27EB8085001674DD /* CustomTableViewCell.swift */,
 				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
+				A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -405,11 +414,13 @@
 				2669FD8B27F0B0E700E96876 /* CustomLabel.swift in Sources */,
 				26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */,
 				882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */,
+				A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */,
 				883AAF3627E8D6FA00714341 /* TabBarController.swift in Sources */,
 				2669FD8E27F0B23900E96876 /* UIStackView+extensions.swift in Sources */,
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
+				A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
 				2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
