@@ -15,11 +15,24 @@ class DetailGitRepositoryViewController: UIViewController {
         super.loadView()
         view = detailGitRepository
         detailGitRepository.setupInfoRepo(infoRepo: infoRepo)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = infoRepo.name
-        
+        configNavBar()
+    }
+    
+    private func configNavBar() {
+        let favorite = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addFavorite))
+        navigationItem.rightBarButtonItem = favorite
+    }
+    
+    @objc func addFavorite() {
+        //print("favoritado")
+//        let favorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(addFavorite))
+//        favorite.tintColor = .red
+//        navigationItem.rightBarButtonItem = favorite
     }
 }
