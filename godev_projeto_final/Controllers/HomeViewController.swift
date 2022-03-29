@@ -29,6 +29,10 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+
+        view.addSubview(tableView)
+        
+
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
         
@@ -72,6 +76,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     //Função para chamar a ordenação da lista
     @objc private func orderByDescAndAsc() {
         tableView.orderBy()
+
     }
     
     private func updateData() {
