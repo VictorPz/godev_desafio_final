@@ -156,11 +156,8 @@
 			children = (
 				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
 				8896C0DB27EB7D4B001674DD /* CustomHomeTableView.swift */,
-
 				A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */,
-
 				9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */,
-
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -598,7 +595,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RP8CYUW3M3;
+				DEVELOPMENT_TEAM = QY59Z7GK88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = godev_projeto_final/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -626,7 +623,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RP8CYUW3M3;
+				DEVELOPMENT_TEAM = QY59Z7GK88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = godev_projeto_final/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

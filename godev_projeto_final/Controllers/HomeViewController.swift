@@ -24,13 +24,14 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     override func loadView() {
         self.view = self.tableView
         delegates()
+        updateData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
-        view.addSubview(tableView)
+        //view.addSubview(tableView)
         
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
