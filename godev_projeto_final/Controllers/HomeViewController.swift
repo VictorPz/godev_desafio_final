@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate {
     
     private var orderList: Bool = true
-    //private var infoRepo: [GitHubRepo] = []
+    private var infoRepo: [GitHubRepo] = []
 
     private var searchText: String = "swift" {
         didSet {
@@ -88,16 +88,21 @@ extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        print("list info \(String(describing: searchController.searchBar.text))")
+        
     }
 }
 
 extension HomeViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailGitRepositoryViewController = DetailGitRepositoryViewController()
-//        detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
-//        navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
+        infoRepo = self.tableView.gitHubRepo
+        let detailGitRepositoryViewController = DetailGitRepositoryViewController()
+        detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
+        navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
+
     }
+    
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchText = "swift"

@@ -9,7 +9,7 @@ import UIKit
 
 class CustomHomeTableView: UIView {
 
-    private var gitHubRepo: [GitHubRepo] = [] {
+    public var gitHubRepo: [GitHubRepo] = [] {
         didSet {
             self.verifyListCount()
         }
