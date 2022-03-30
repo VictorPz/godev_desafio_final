@@ -9,6 +9,14 @@ import UIKit
 
 class CustomFavoriteTableView: UIView {
     
+    public var coreDataRepos: [CoreDataRepo] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.favoriteTableView.reloadData()
+            }
+        }
+    }
+    
     lazy var favoriteTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,21 +32,28 @@ class CustomFavoriteTableView: UIView {
         
         favoriteTableView.separatorColor = UIColor.clear
         setupView()
+        initCoreDataRepos()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func initCoreDataRepos() {
+        coreDataRepos = ManagedObjectContext.shared.getRepoData()
+    }
 }
 
 extension CustomFavoriteTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return coreDataRepos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCustomTableViewCell.identifier, for: indexPath) as? FavoriteCustomTableViewCell else {return UITableViewCell()}
-        cell.updateView()
+        
+        let repo = coreDataRepos[indexPath.row]
+        cell.updateView(repoTitle: repo.name, repoDescription: repo.details, image: UIImage(data: repo.image)!)
         return cell
     }
 }

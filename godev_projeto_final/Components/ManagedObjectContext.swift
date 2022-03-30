@@ -37,7 +37,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
     
     // MARK: - Private Variables
     
-    private let entity = "Repositories"
+    private let entity = "Entity"
     
     
     // MARK: - Public Properties
@@ -68,11 +68,11 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
                 
                 if  let id = repo.value(forKey: "id") as? String,
                     let name = repo.value(forKey: "name") as? String,
-                    let image = repo.value(forKey: "image") as? String,
+                    let image = repo.value(forKey: "image") as? Data,
                     let details = repo.value(forKey: "details") as? String,
                     let author = repo.value(forKey: "author") as? String,
                     let viewsCount  = repo.value(forKey: "viewsCount") as? Int,
-                    let createdAt = repo.value(forKey: "createdAt") as? Date,
+                    let createdAt = repo.value(forKey: "createdAt") as? String,
                     let license = repo.value(forKey: "license") as? String,
                     let url = repo.value(forKey: "url") as? String{
                     
@@ -143,32 +143,30 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
 }
 
 /*
-// SAVE
-let string = "01/02/2016"
+ // SAVE
+let string = "2022-03-01T18:10:07Z"
 
 let dateFormatter = DateFormatter()
-
-dateFormatter.dateFormat = "dd/MM/yy"
-
+dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
 let dateString = dateFormatter.date(from: string)!
 
-let repoTest = CoreDataRepo(id: "1010", name: "Teste 1", image: "image 1", details: "Details 1", author: "Teste 1", viewsCount: 30, createdAt: dateString, license: "MIT", url: "www.google.com")
+let image = UIImage(systemName: "square.and.arrow.up")?.pngData()
+
+let repoTest = CoreDataRepo(id: "465005226", name: "TrafficLightsApp", image: image!, details: "homework  2.1 task 1", author: "StGeAr", viewsCount: 0, createdAt: "jo", license: "MIT", url: "https://api.github.com/repos/StGeAr/TrafficLightsApp")
 
 ManagedObjectContext.shared.saveRepoData(repo: repoTest) { res in
     print(res)
-}*/
+}
 
-/*
 // GET
 var repoList: [CoreDataRepo] = []
 
 repoList = ManagedObjectContext.shared.getRepoData()
 
-print(repoList)*/
+print(repoList)
 
-
-/*
 // DELETE
-ManagedObjectContext.shared.deleteRepoData(id: "1010") { res in
+ManagedObjectContext.shared.deleteRepoData(id: "465005226") { res in
     print(res)
-}*/
+}
+ */
