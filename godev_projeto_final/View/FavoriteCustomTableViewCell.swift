@@ -60,13 +60,12 @@ class FavoriteCustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateView() {
-        repositoryTitle.text = "Teste"
-        repositoryDescription.text = "A  kinda long text description for literaly no propouse"
-        ownerImage.image = UIImage(systemName: "house")
+    func updateView(repoTitle: String, repoDescription: String, image: UIImage) {
+        repositoryTitle.text = repoTitle
+        repositoryDescription.text = repoDescription
+        ownerImage.image = image
         ownerImage.layer.masksToBounds = true
         ownerImage.layer.cornerRadius = 42.5
-        ownerImage.backgroundColor = .orange
     }
     
 //    func updateView(repo: GitHubRepo) {

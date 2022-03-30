@@ -11,11 +11,11 @@ import Foundation
 struct CoreDataRepo {
     var id: String
     var name: String
-    var image: String
+    var image: Data
     var details: String
     var author: String
     var viewsCount: Int
-    var createdAt: Date
+    var createdAt: String
     var license: String
     var url: String
 }
