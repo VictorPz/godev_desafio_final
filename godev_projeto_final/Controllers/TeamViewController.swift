@@ -9,7 +9,14 @@ import UIKit
 
 class TeamViewController: UIViewController {
     
+    let tableview = CustomTeamTableView()
+    
     override func viewDidLoad() {
         view.backgroundColor = .red
     }
+    
+    override func loadView() {
+        self.view = self.tableview
+    }
 }
+
