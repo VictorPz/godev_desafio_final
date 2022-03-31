@@ -9,7 +9,7 @@ import Foundation
 
 // struct that receives the CoreData repository information
 struct CoreDataRepo {
-    var id: String
+    var id: Int
     var name: String
     var image: Data
     var details: String
