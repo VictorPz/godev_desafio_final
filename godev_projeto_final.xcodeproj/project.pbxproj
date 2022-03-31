@@ -39,6 +39,7 @@
 		88AB2ACD27F38D39005FC9D1 /* FavoriteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */; };
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
 		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
+		A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848378B27F55EEC00606FF3 /* String+extensions.swift */; };
 		A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */; };
 		A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetail.swift; sourceTree = "<group>"; };
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A848378B27F55EEC00606FF3 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				8896C0E027EB809E001674DD /* UIImageView+Extension.swift */,
 				2669FD8D27F0B23900E96876 /* UIStackView+extensions.swift */,
 				2669FD8F27F0B28600E96876 /* UIView+extensions.swift */,
+				A848378B27F55EEC00606FF3 /* String+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				26706DAD27EE69EA003A67DD /* CustomHorizontalStackView.swift in Sources */,
 				5EF55C7B27F5135500FB9247 /* CustomTeamTableView.swift in Sources */,
 				88AB2AC927F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift in Sources */,
+				A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */,
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
 				26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */,
