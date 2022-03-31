@@ -37,7 +37,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
     
     // MARK: - Private Variables
     
-    private let entity = "Entity"
+    private let entity = "Entity1"
     
     
     // MARK: - Public Properties
@@ -66,7 +66,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
             
             for repo in repos {
                 
-                if  let id = repo.value(forKey: "id") as? String,
+                if  let id = repo.value(forKey: "id") as? Int,
                     let name = repo.value(forKey: "name") as? String,
                     let image = repo.value(forKey: "image") as? Data,
                     let details = repo.value(forKey: "details") as? String,

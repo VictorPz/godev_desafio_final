@@ -172,6 +172,17 @@ class DetailRepositoryView: UIView {
         
     }
     
+    func favoriteRepo(infoRepo: GitHubRepo) {
+        let image = ownerImage.image?.pngData()
+
+        let repoTest = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, image: image!, details: infoRepo.description!, author: infoRepo.owner.login, viewsCount: infoRepo.watchers_count, createdAt: infoRepo.created_at, license: infoRepo.license!.name, url: infoRepo.html_url)
+
+        ManagedObjectContext.shared.saveRepoData(repo: repoTest) { res in
+            print(res)
+        }
+        
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

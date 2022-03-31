@@ -30,9 +30,9 @@ class DetailGitRepositoryViewController: UIViewController {
     }
     
     @objc func addFavorite() {
-        //print("favoritado")
-//        let favorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(addFavorite))
-//        favorite.tintColor = .red
-//        navigationItem.rightBarButtonItem = favorite
+        let favorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(addFavorite))
+        favorite.tintColor = .red
+        navigationItem.rightBarButtonItem = favorite
+        detailGitRepository.favoriteRepo(infoRepo: infoRepo)
     }
 }
