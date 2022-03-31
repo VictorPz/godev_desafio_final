@@ -167,9 +167,7 @@ class DetailRepositoryView: UIView {
         descriptionLabel.text = infoRepo.description
         authorNameLabel.text = infoRepo.owner.login
         countInfoLabel.text = String(infoRepo.watchers_count)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        dataInfoLabel.text = dateFormatter.string(from: Date())
+        dataInfoLabel.text = String().convertStringDateFormat(stringVariable: infoRepo.created_at)
         licenceInfoLabel.text = infoRepo.license?.name
         
     }
