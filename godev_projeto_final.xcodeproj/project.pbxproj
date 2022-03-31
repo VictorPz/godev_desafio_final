@@ -140,34 +140,123 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		26706DA827EE60DE003A67DD /* View */ = {
+		26706DAB27EE69D2003A67DD /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
+				2669FD8C27F0B21100E96876 /* Extensions */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		26A8E4B827F5FEE000DC8B6E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3127E8D6FA00714341 /* AppDelegate.swift */,
+				883AAF3327E8D6FA00714341 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		26A8E4BB27F5FFB600DC8B6E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				26A8E4BF27F6002A00DC8B6E /* TeamTableView */,
+				26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */,
+				26A8E4BD27F5FFF800DC8B6E /* HomeTableView */,
+				26A8E4BC27F5FFDA00DC8B6E /* GitRepositoryDetailView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		26A8E4BC27F5FFDA00DC8B6E /* GitRepositoryDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */,
+			);
+			path = GitRepositoryDetailView;
+			sourceTree = "<group>";
+		};
+		26A8E4BD27F5FFF800DC8B6E /* HomeTableView */ = {
 			isa = PBXGroup;
 			children = (
 				8896C0DB27EB7D4B001674DD /* CustomHomeTableView.swift */,
 				8896C0DE27EB8085001674DD /* CustomTableViewCell.swift */,
-				26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */,
+			);
+			path = HomeTableView;
+			sourceTree = "<group>";
+		};
+		26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */ = {
+			isa = PBXGroup;
+			children = (
 				88AB2AC827F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift */,
 				88AB2ACA27F38763005FC9D1 /* CustomFavoriteTableView.swift */,
+			);
+			path = FavoriteTablewView;
+			sourceTree = "<group>";
+		};
+		26A8E4BF27F6002A00DC8B6E /* TeamTableView */ = {
+			isa = PBXGroup;
+			children = (
 				5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */,
 				5EF55C7C27F5137100FB9247 /* CustomTableViewCellTeam.swift */,
 			);
-			path = View;
+			path = TeamTableView;
 			sourceTree = "<group>";
 		};
-		26706DAB27EE69D2003A67DD /* Commons */ = {
+		26A8E4C027F6003D00DC8B6E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2669FD8C27F0B21100E96876 /* Extensions */,
-				26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */,
-				2669FD8A27F0B0E700E96876 /* CustomLabel.swift */,
+				8896C0D527EB6B14001674DD /* HomeViewController.swift */,
 			);
-			path = Commons;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		26A8E4C127F6004500DC8B6E /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				8896C0D727EB6CB0001674DD /* FavoriteViewController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		26A8E4C227F6005200DC8B6E /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				8896C0D927EB6CD1001674DD /* TeamViewController.swift */,
+			);
+			path = Team;
+			sourceTree = "<group>";
+		};
+		26A8E4C327F6007400DC8B6E /* FavoriteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */,
+			);
+			path = FavoriteDetail;
+			sourceTree = "<group>";
+		};
+		26A8E4C427F6009200DC8B6E /* GitRepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				26706DA627EE6055003A67DD /* DetailGitRepositoryViewController.swift */,
+			);
+			path = GitRepositoryDetail;
+			sourceTree = "<group>";
+		};
+		26A8E4C527F6013C00DC8B6E /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */,
+				882CC20A27EA06EE009FA401 /* githubApiService.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		882CC20927EA06B9009FA401 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				882CC20A27EA06EE009FA401 /* githubApiService.swift */,
+				26A8E4C527F6013C00DC8B6E /* Requests */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -177,8 +266,8 @@
 			children = (
 				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
 				A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */,
-				9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */,
 				5EF55C7E27F513B100FB9247 /* Team.swift */,
+				9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -207,11 +296,11 @@
 		883AAF3027E8D6FA00714341 /* godev_projeto_final */ = {
 			isa = PBXGroup;
 			children = (
+				26A8E4BB27F5FFB600DC8B6E /* Scenes */,
+				26A8E4B827F5FEE000DC8B6E /* Application */,
 				26706DAB27EE69D2003A67DD /* Commons */,
 				8896C0DD27EB806E001674DD /* Components */,
-				883AAF6427E8D85D00714341 /* Delegates */,
 				882CC20C27EA129A009FA401 /* Models */,
-				26706DA827EE60DE003A67DD /* View */,
 				883AAF6527E8D86700714341 /* Controllers */,
 				883AAF6627E8D89700714341 /* Resources */,
 				882CC20927EA06B9009FA401 /* Service */,
@@ -237,24 +326,15 @@
 			path = godev_projeto_finalUITests;
 			sourceTree = "<group>";
 		};
-		883AAF6427E8D85D00714341 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				883AAF3127E8D6FA00714341 /* AppDelegate.swift */,
-				883AAF3327E8D6FA00714341 /* SceneDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
 		883AAF6527E8D86700714341 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26A8E4C427F6009200DC8B6E /* GitRepositoryDetail */,
+				26A8E4C327F6007400DC8B6E /* FavoriteDetail */,
+				26A8E4C227F6005200DC8B6E /* Team */,
+				26A8E4C127F6004500DC8B6E /* Favorite */,
+				26A8E4C027F6003D00DC8B6E /* Home */,
 				883AAF3527E8D6FA00714341 /* TabBarController.swift */,
-				8896C0D527EB6B14001674DD /* HomeViewController.swift */,
-				8896C0D727EB6CB0001674DD /* FavoriteViewController.swift */,
-				8896C0D927EB6CD1001674DD /* TeamViewController.swift */,
-				26706DA627EE6055003A67DD /* DetailGitRepositoryViewController.swift */,
-				88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,8 +360,8 @@
 		8896C0DD27EB806E001674DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
-				A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */,
+				2669FD8A27F0B0E700E96876 /* CustomLabel.swift */,
+				26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
