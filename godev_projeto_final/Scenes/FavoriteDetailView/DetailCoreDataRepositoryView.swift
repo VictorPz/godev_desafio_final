@@ -162,23 +162,22 @@ class DetailCoreDataRepositoryView: UIView {
         setupView()
     }
     
-    func setupInfoRepo(infoRepo: GitHubRepo) {
-        ownerImage.loadImage(from: infoRepo.owner.avatar_url)
+    func setupInfoRepo(infoRepo: CoreDataRepo) {
+        ownerImage.image = UIImage(data: infoRepo.owner.avatarImage)
         descriptionLabel.text = infoRepo.description
         authorNameLabel.text = infoRepo.owner.login
-        countInfoLabel.text = String(infoRepo.watchers_count)
-        dataInfoLabel.text = String().convertStringDateFormat(stringVariable: infoRepo.created_at)
+        countInfoLabel.text = String(infoRepo.watchersCount)
+        dataInfoLabel.text = String().convertStringDateFormat(stringVariable: infoRepo.createdAt)
         licenceInfoLabel.text = infoRepo.license?.name
-        
     }
     
-    func favoriteRepo(infoRepo: GitHubRepo) {
+    public func addFavoriteRepo(infoRepo: CoreDataRepo) {
         if let image = ownerImage.image?.pngData() {
             
             let owner = CoreDataOwner(login: infoRepo.owner.login, avatarImage: image)
             let license = CoreDataLicense(name: infoRepo.license?.name ?? "No License")
             
-            let repo = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, htmlUrl: infoRepo.html_url, description: infoRepo.description, watchersCount: infoRepo.watchers_count, createdAt: infoRepo.created_at, owner: owner, license: license)
+            let repo = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, htmlUrl: infoRepo.htmlUrl, description: infoRepo.description, watchersCount: infoRepo.watchersCount, createdAt: infoRepo.createdAt, owner: owner, license: license)
 
             ManagedObjectContext.shared.saveRepoData(repo: repo) { res in
                 print(res)
@@ -186,6 +185,12 @@ class DetailCoreDataRepositoryView: UIView {
             
         }
         
+    }
+    
+    public func removeFavoriteRepo(infoRepo: CoreDataRepo) {
+        ManagedObjectContext.shared.deleteRepoData(id: infoRepo.id) { res in
+            print(res)
+        }
     }
     
     required init?(coder: NSCoder) {

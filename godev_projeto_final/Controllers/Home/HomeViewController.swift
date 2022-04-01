@@ -109,6 +109,7 @@ extension HomeViewController: UITableViewDelegate {
         infoRepo = self.tableView.gitHubRepo
         let detailGitRepositoryViewController = DetailGitRepositoryViewController()
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
+        detailGitRepositoryViewController.screenMode = .api
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
 
     }
