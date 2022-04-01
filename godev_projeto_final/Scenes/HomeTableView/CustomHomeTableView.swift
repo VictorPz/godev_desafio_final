@@ -134,7 +134,7 @@ extension CustomHomeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell else { return UITableViewCell() }
         let repo = gitHubRepo[indexPath.row]
-        cell.updateView(repo: repo)
+        cell.updateHomeView(repo: repo)
         return cell
     }
 }

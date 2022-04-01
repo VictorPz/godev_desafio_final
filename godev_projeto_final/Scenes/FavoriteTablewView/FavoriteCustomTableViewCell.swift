@@ -4,7 +4,7 @@
 //
 //  Created by Victor Pizetta on 29/03/22.
 //
-
+/*
 import UIKit
 
 class FavoriteCustomTableViewCell: UITableViewCell {
@@ -108,3 +108,4 @@ extension FavoriteCustomTableViewCell: ViewCodable {
         ])
     }
 }
+*/

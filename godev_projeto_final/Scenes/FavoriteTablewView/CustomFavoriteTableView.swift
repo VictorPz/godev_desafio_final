@@ -20,7 +20,7 @@ class CustomFavoriteTableView: UIView {
     lazy var favoriteTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(FavoriteCustomTableViewCell.self, forCellReuseIdentifier: FavoriteCustomTableViewCell.identifier)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -51,10 +51,10 @@ extension CustomFavoriteTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCustomTableViewCell.identifier, for: indexPath) as? FavoriteCustomTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {return UITableViewCell()}
         
         let repo = coreDataRepos[indexPath.row]
-        cell.updateView(repoTitle: repo.name, repoDescription: repo.details, image: UIImage(data: repo.image)!)
+        cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.details, image: UIImage(data: repo.image)!)
         return cell
     }
 }
