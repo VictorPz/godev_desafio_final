@@ -173,12 +173,17 @@ class DetailRepositoryView: UIView {
     }
     
     func favoriteRepo(infoRepo: GitHubRepo) {
-        let image = ownerImage.image?.pngData()
+        if let image = ownerImage.image?.pngData() {
+            
+            let owner = CoreDataOwner(login: infoRepo.owner.login, avatarImage: image)
+            let license = CoreDataLicense(name: infoRepo.license?.name ?? "No License")
+            
+            let repo = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, htmlUrl: infoRepo.html_url, description: infoRepo.description, watchersCount: infoRepo.watchers_count, createdAt: infoRepo.created_at, owner: owner, license: license)
 
-        let repoTest = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, image: image!, details: infoRepo.description!, author: infoRepo.owner.login, viewsCount: infoRepo.watchers_count, createdAt: infoRepo.created_at, license: infoRepo.license!.name, url: infoRepo.html_url)
-
-        ManagedObjectContext.shared.saveRepoData(repo: repoTest) { res in
-            print(res)
+            ManagedObjectContext.shared.saveRepoData(repo: repo) { res in
+                print(res)
+            }
+            
         }
         
     }

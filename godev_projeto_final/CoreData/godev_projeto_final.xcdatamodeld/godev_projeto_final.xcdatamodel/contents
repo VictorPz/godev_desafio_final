@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
-        <attribute name="author" optional="YES" attributeType="String"/>
-        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="author" attributeType="String"/>
+        <attribute name="createdAt" attributeType="String"/>
         <attribute name="details" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="image" attributeType="Binary"/>
         <attribute name="license" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="String"/>
-        <attribute name="viewsCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+        <attribute name="viewsCount" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="Entity1" representedClassName="Entity1" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
@@ -35,7 +35,7 @@
     </entity>
     <elements>
         <element name="Entity" positionX="-45" positionY="72" width="128" height="164"/>
-        <element name="Repositories" positionX="-63" positionY="-18" width="128" height="164"/>
         <element name="Entity1" positionX="-54" positionY="99" width="128" height="164"/>
+        <element name="Repositories" positionX="-63" positionY="-18" width="128" height="164"/>
     </elements>
 </model>
