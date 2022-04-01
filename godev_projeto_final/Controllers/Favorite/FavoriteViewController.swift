@@ -20,6 +20,11 @@ class FavoriteViewController: UIViewController {
         delegates()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoriteTableView.initCoreDataRepos()
+    }
+    
     override func viewDidLoad() {
         view.backgroundColor = .blue
     }
