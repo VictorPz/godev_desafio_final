@@ -26,7 +26,7 @@ protocol managedSaveProtocol {
 }
 
 protocol managedDeleteProtocol {
-    func deleteRepoData(id: String, onCompletionHandler: onCompletionHandler)
+    func deleteRepoData(id: Int, onCompletionHandler: onCompletionHandler)
 }
 
 
@@ -120,7 +120,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         }
     }
     
-    func deleteRepoData(id: String, onCompletionHandler: (String) -> Void) {
+    func deleteRepoData(id: Int, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         
         let predicate = NSPredicate(format: "id == %@", "\(id)")

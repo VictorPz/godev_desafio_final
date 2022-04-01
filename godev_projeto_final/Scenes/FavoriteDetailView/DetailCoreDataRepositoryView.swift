@@ -1,13 +1,13 @@
 //
-//  DetailGitRepositoryView.swift
+//  DetailCoreDataRepositoryView.swift
 //  godev_projeto_final
 //
-//  Created by Idwall Go Dev 008 on 25/03/22.
+//  Created by SP11793 on 01/04/22.
 //
 
 import UIKit
 
-class DetailRepositoryView: UIView {
+class DetailCoreDataRepositoryView: UIView {
     
     private var safeArea: UILayoutGuide!
     
@@ -172,7 +172,7 @@ class DetailRepositoryView: UIView {
         
     }
     
-    public func addFavoriteRepo(infoRepo: GitHubRepo) {
+    func favoriteRepo(infoRepo: GitHubRepo) {
         if let image = ownerImage.image?.pngData() {
             
             let owner = CoreDataOwner(login: infoRepo.owner.login, avatarImage: image)
@@ -188,18 +188,12 @@ class DetailRepositoryView: UIView {
         
     }
     
-    public func removeFavoriteRepo(infoRepo: GitHubRepo) {
-        ManagedObjectContext.shared.deleteRepoData(id: infoRepo.id) { res in
-            print(res)
-        }
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension DetailRepositoryView: ViewCodable {
+extension DetailCoreDataRepositoryView: ViewCodable {
     func buildHierarchy() {
         
         verticalStack.addArrangedSubviews(descriptionLabel, authorHorizontalStack, countObserversContaineHorizontalStack, dataCreationContaineHorizontalStack, licenceContaineHorizontalStack)
