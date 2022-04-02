@@ -16,6 +16,7 @@ class CustomTableViewCellTeam: UITableViewCell {
     private lazy var photoImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
         return image
     }()
     

@@ -191,7 +191,11 @@ class DetailRepositoryView: UIView {
 extension DetailRepositoryView: ViewCodable {
     func buildHierarchy() {
         
-        verticalStack.addArrangedSubviews(descriptionLabel, authorHorizontalStack, countObserversContaineHorizontalStack, dataCreationContaineHorizontalStack, licenceContaineHorizontalStack)
+        verticalStack.addArrangedSubviews(descriptionLabel,
+                                          authorHorizontalStack,
+                                          countObserversContaineHorizontalStack,
+                                          dataCreationContaineHorizontalStack,
+                                          licenceContaineHorizontalStack)
         authorHorizontalStack.addArrangedSubviews(iconImageView, authorLabel, authorNameLabel)
         countObserversContaineHorizontalStack.addArrangedSubviews(iconEyeImage, countObserversLabel, countInfoLabel)
         dataCreationContaineHorizontalStack.addArrangedSubviews(iconClockImage, dataLabel, dataInfoLabel)

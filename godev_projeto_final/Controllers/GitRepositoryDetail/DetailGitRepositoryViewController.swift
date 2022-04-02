@@ -15,7 +15,6 @@ class DetailGitRepositoryViewController: UIViewController {
         super.loadView()
         view = detailGitRepository
         detailGitRepository.setupInfoRepo(infoRepo: infoRepo)
-        
     }
     
     override func viewDidLoad() {

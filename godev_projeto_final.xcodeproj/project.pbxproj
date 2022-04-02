@@ -37,6 +37,9 @@
 		88AB2AC927F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2AC827F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift */; };
 		88AB2ACB27F38763005FC9D1 /* CustomFavoriteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2ACA27F38763005FC9D1 /* CustomFavoriteTableView.swift */; };
 		88AB2ACD27F38D39005FC9D1 /* FavoriteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */; };
+		88FE9E4B27F74C6100190358 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4A27F74C6100190358 /* DetailTeamViewController.swift */; };
+		88FE9E4E27F74DA100190358 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4D27F74DA100190358 /* TeamDetailView.swift */; };
+		88FE9E5027F75E3300190358 /* CustomIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4F27F75E3300190358 /* CustomIconImage.swift */; };
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
 		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
 		A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848378B27F55EEC00606FF3 /* String+extensions.swift */; };
@@ -96,6 +99,9 @@
 		88AB2AC827F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCustomTableViewCell.swift; sourceTree = "<group>"; };
 		88AB2ACA27F38763005FC9D1 /* CustomFavoriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFavoriteTableView.swift; sourceTree = "<group>"; };
 		88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetail.swift; sourceTree = "<group>"; };
+		88FE9E4A27F74C6100190358 /* DetailTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamViewController.swift; sourceTree = "<group>"; };
+		88FE9E4D27F74DA100190358 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
+		88FE9E4F27F75E3300190358 /* CustomIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIconImage.swift; sourceTree = "<group>"; };
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A848378B27F55EEC00606FF3 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		26A8E4BB27F5FFB600DC8B6E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				88FE9E4C27F74D8800190358 /* TeamDetailView */,
 				26A8E4BF27F6002A00DC8B6E /* TeamTableView */,
 				26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */,
 				26A8E4BD27F5FFF800DC8B6E /* HomeTableView */,
@@ -224,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8896C0D927EB6CD1001674DD /* TeamViewController.swift */,
+				88FE9E4A27F74C6100190358 /* DetailTeamViewController.swift */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -362,8 +370,17 @@
 			children = (
 				2669FD8A27F0B0E700E96876 /* CustomLabel.swift */,
 				26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */,
+				88FE9E4F27F75E3300190358 /* CustomIconImage.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		88FE9E4C27F74D8800190358 /* TeamDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				88FE9E4D27F74DA100190358 /* TeamDetailView.swift */,
+			);
+			path = TeamDetailView;
 			sourceTree = "<group>";
 		};
 		A842E5D927EA5ACC0014E63B /* Frameworks */ = {
@@ -508,10 +525,12 @@
 				5EF55C7B27F5135500FB9247 /* CustomTeamTableView.swift in Sources */,
 				88AB2AC927F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift in Sources */,
 				A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */,
+				88FE9E4B27F74C6100190358 /* DetailTeamViewController.swift in Sources */,
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
 				26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */,
 				88AB2ACB27F38763005FC9D1 /* CustomFavoriteTableView.swift in Sources */,
+				88FE9E4E27F74DA100190358 /* TeamDetailView.swift in Sources */,
 				8896C0DF27EB8085001674DD /* CustomTableViewCell.swift in Sources */,
 				2669FD8B27F0B0E700E96876 /* CustomLabel.swift in Sources */,
 				26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */,
@@ -525,6 +544,7 @@
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
 				A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */,
+				88FE9E5027F75E3300190358 /* CustomIconImage.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
 				2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
