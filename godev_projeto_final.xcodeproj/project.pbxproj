@@ -169,11 +169,8 @@
 		26A8E4BB27F5FFB600DC8B6E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-
 				88FE9E4C27F74D8800190358 /* TeamDetailView */,
-
 				A86CCB7F27F779E70007D4BB /* FavoriteDetailView */,
-
 				26A8E4BF27F6002A00DC8B6E /* TeamTableView */,
 				26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */,
 				26A8E4BD27F5FFF800DC8B6E /* HomeTableView */,

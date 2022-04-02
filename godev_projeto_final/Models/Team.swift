@@ -58,17 +58,17 @@ struct Team {
                  github: "",
                  description: ""),
             
-            Team(name: "Luis Kokumai",
-                 ocupation: "Developer Mobile",
-                 image: "carlos", fone: "(84) 98715-0582",
-                 email: "carluxhenrique@gmail.com",
-                 linkedin: "https://www.linkedin.com/in/carlos-henrique-pires-dos-santos-23251a122/",
-                 github: "",
-                 description: ""),
+            Team(name: "Luis Gustavo de A. Kokumai",
+                 ocupation: "Técnico Mecatrônico com foco em Desenvolvimento/TI",
+                 image: "luiskokumai", fone: "(11) 94724-5874",
+                 email: "lgkokumai@gmail.com",
+                 linkedin: "https://www.linkedin.com/in/luiskokumai/",
+                 github: "https://github.com/KokumaiLuis",
+                 description: "Desde criança sou apaixonado por tecnologia, esportes, música e games! Possuo experiência como back-end e hoje estou descobrindo o mundo mobile com Swift. Em constante evolução, busco sempre ensinar o que sei e aprender com os outros. Gosto muito de interagir com outras culturas e conhecer pessoas novas. Me considero uma pessoa muito determinada e responsável. Acredito que com esforço você pode chegar no lugar que quiser!"),
             
             Team(name: "Rafael Rocha dos Santos",
                  ocupation: "Técnico de Tecnologia da Informação - IFTM - Patrocínio",
-                 image: "rafa",
+                 image: "rafaelsantos",
                  fone: "(34) 99226-9887",
                  email: "rafaelsantoscv_@hotmail.com / rafaelrocha578@gmail.com",
                  linkedin: "https://www.linkedin.com/in/rafael-rocha-dos-santos-7b133410b",
@@ -76,12 +76,12 @@ struct Team {
                  description: "Fascinado por tecnologia e o mundo do hardware. Sou um cara que gosta de novos desafios, gosto de fazer amizade, conversar é sempre bom. Curto mecânica automotiva, curto a cultura otako, fascinado por filmes de ficção científica e também filmes de super heróis, não deve faltar! não sou bom em passar os meus conhecimentos, mas sempre faço o possível pra está ajudando, pois se eu aprendi, posso aprender mais ainda ensinando."),
             
             Team(name: "Rogério Tavares",
-                 ocupation: "Developer Mobile",
-                 image: "carlos", fone: "(84) 98715-0582",
-                 email: "carluxhenrique@gmail.com",
-                 linkedin: "https://www.linkedin.com/in/carlos-henrique-pires-dos-santos-23251a122/",
-                 github: "",
-                 description: "")]
+                 ocupation: "Desenvolvedor Fullstack na Hu. Innovation",
+                 image: "rogeriotavares", fone: "(84) 98715-0582",
+                 email: "email@rogeriotavares.dev",
+                 linkedin: "https://www.linkedin.com/in/rogertavaress",
+                 github: "https://github.com/rogertavaress",
+                 description: "Apaixonado por tecnologia e desenvolvimento de software.")]
         
         return components
     }
