@@ -24,8 +24,13 @@ class DetailGitRepositoryViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+
+        view = detailGitRepository
+        detailGitRepository.setupInfoRepo(infoRepo: infoRepo)
+
         initModeScreen()
         
+
     }
     
     override func viewDidLoad() {

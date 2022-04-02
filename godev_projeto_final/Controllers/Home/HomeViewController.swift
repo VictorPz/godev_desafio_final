@@ -31,21 +31,9 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
 
-        //view.addSubview(tableView)
-        
-
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
-        
-//        ManagedObjectContext.shared.deleteRepoData(id: "8283") { res in
-//            print(res)
-//        }
-        
-        
-//        infoRepo = [
-//            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club 01", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License")),
-//            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club 02", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License"))
-//        ]
+
     }
     
     private func delegates() {

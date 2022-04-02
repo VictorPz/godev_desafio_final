@@ -9,12 +9,10 @@ import UIKit
 
 class CustomTeamTableView: UIView{
     
-    private lazy var tableview: UITableView = {
+        lazy var tableview: UITableView = {
         let table = UITableView()
         
         table.register(CustomTableViewCellTeam.self, forCellReuseIdentifier: CustomTableViewCellTeam.identifier)
-        
-        table.delegate = self
         table.dataSource = self
         table.showsVerticalScrollIndicator = false
         table.separatorColor = UIColor.clear
@@ -31,11 +29,6 @@ class CustomTeamTableView: UIView{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension CustomTeamTableView: UITableViewDelegate {
-    
-    
 }
 
 extension CustomTeamTableView: UITableViewDataSource {

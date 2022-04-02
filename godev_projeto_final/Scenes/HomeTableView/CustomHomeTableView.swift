@@ -20,7 +20,6 @@ class CustomHomeTableView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.dataSource = self
-        //tableView.delegate = self
         return tableView
     }()
     
@@ -47,10 +46,7 @@ class CustomHomeTableView: UIView {
         super.init(frame: .zero)
         tableView.reloadData()
         tableView.showsVerticalScrollIndicator = false
-        
-        //Sumir com o separador da celula - Rafael
         tableView.separatorColor = UIColor.clear
-        //dataGit()
         setupView()
         
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -60,13 +56,6 @@ class CustomHomeTableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //Dados mocados - Rafael
-//    private func dataGit() {
-//        gitHubRepo = [
-//            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License")),
-//            GitHubRepo(id: 50447720, node_id: "MDEwOlJlcG9zaXRvcnk1MDQ0NzcyMA==", name: "Swift-algorithm-club", fullName: "aywenderlich/swift-algorithm-club", html_url: "https://github.com/raywenderlich/swift-algorithm-club", description: "Algorithms and data structures in Swift, with explanations!", watchers_count: 26101, created_at: "2016-01-26T17:56:12Z", owner: Owner(login: "raywenderlich", id: 4722515, node_id: "MDEyOk9yZ2FuaXphdGlvbjQ3MjI1MTU=", avatar_url: "https://avatars.githubusercontent.com/u/4722515?v=4"), license: License(name: "MIT License"))
-//        ]
-//    }
 }
 
 extension CustomHomeTableView: UITableViewDataSource {
