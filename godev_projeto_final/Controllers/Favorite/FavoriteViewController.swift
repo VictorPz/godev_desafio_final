@@ -10,6 +10,7 @@ import UIKit
 class FavoriteViewController: UIViewController {
     
     let favoriteTableView = CustomFavoriteTableView()
+    private var infoRepo: [CoreDataRepo] = []
     
     private func delegates() {
         favoriteTableView.favoriteTableView.delegate = self
@@ -32,7 +33,12 @@ class FavoriteViewController: UIViewController {
 
 extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(FavoriteDetail(), animated: true)
+        infoRepo = self.favoriteTableView.coreDataRepos
+        let detailGitRepositoryViewController = DetailGitRepositoryViewController()
+        detailGitRepositoryViewController.inforepoCoredata = infoRepo[indexPath.row]
+        detailGitRepositoryViewController.screenMode = .coredata
+        navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
+        //navigationController?.pushViewController(FavoriteDetail(), animated: true)
     }
     
 }

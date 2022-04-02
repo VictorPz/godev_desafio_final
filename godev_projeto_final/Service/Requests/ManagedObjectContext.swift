@@ -26,7 +26,7 @@ protocol managedSaveProtocol {
 }
 
 protocol managedDeleteProtocol {
-    func deleteRepoData(id: String, onCompletionHandler: onCompletionHandler)
+    func deleteRepoData(id: Int, onCompletionHandler: onCompletionHandler)
 }
 
 
@@ -68,15 +68,20 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
                 
                 if  let id = repo.value(forKey: "id") as? Int,
                     let name = repo.value(forKey: "name") as? String,
-                    let image = repo.value(forKey: "image") as? Data,
-                    let details = repo.value(forKey: "details") as? String,
-                    let author = repo.value(forKey: "author") as? String,
-                    let viewsCount  = repo.value(forKey: "viewsCount") as? Int,
+                    let avatarImage = repo.value(forKey: "image") as? Data,
+                    let description = repo.value(forKey: "details") as? String,
+                    let login = repo.value(forKey: "author") as? String,
+                    let watchersCount  = repo.value(forKey: "viewsCount") as? Int,
                     let createdAt = repo.value(forKey: "createdAt") as? String,
                     let license = repo.value(forKey: "license") as? String,
-                    let url = repo.value(forKey: "url") as? String{
+                    let htmlUrl = repo.value(forKey: "url") as? String{
                     
-                    let repo = CoreDataRepo(id: id, name: name, image: image, details: details, author: author, viewsCount: viewsCount, createdAt: createdAt, license: license, url: url)
+                    let owner = CoreDataOwner(login: login, avatarImage: avatarImage)
+                    let license = CoreDataLicense(name: license)
+                    
+                    let repo = CoreDataRepo(id: id, name: name, htmlUrl: htmlUrl, description: description, watchersCount: watchersCount, createdAt: createdAt, owner: owner, license: license)
+                    
+                    /*let repo = CoreDataRepo(id: id, name: name, image: image, details: details, author: author, viewsCount: viewsCount, createdAt: createdAt, license: license, url: url)*/
                     repoList.append(repo)
                 }
             }
@@ -97,13 +102,13 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         
         transaction.setValue(repo.id, forKey: "id")
         transaction.setValue(repo.name, forKey: "name")
-        transaction.setValue(repo.image, forKey: "image")
-        transaction.setValue(repo.details, forKey: "details")
-        transaction.setValue(repo.author, forKey: "author")
-        transaction.setValue(repo.viewsCount, forKey: "viewsCount")
+        transaction.setValue(repo.owner.avatarImage, forKey: "image")
+        transaction.setValue(repo.description, forKey: "details")
+        transaction.setValue(repo.owner.login, forKey: "author")
+        transaction.setValue(repo.watchersCount, forKey: "viewsCount")
         transaction.setValue(repo.createdAt, forKey: "createdAt")
-        transaction.setValue(repo.license, forKey: "license")
-        transaction.setValue(repo.url, forKey: "url")
+        transaction.setValue(repo.license?.name, forKey: "license")
+        transaction.setValue(repo.htmlUrl, forKey: "url")
         
         do {
             try context.save()
@@ -115,7 +120,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         }
     }
     
-    func deleteRepoData(id: String, onCompletionHandler: (String) -> Void) {
+    func deleteRepoData(id: Int, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         
         let predicate = NSPredicate(format: "id == %@", "\(id)")

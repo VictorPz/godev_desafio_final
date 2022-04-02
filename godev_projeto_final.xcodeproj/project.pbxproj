@@ -40,6 +40,7 @@
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
 		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
 		A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848378B27F55EEC00606FF3 /* String+extensions.swift */; };
+		A86CCB8127F77A190007D4BB /* DetailCoreDataRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */; };
 		A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */; };
 		A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A848378B27F55EEC00606FF3 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoreDataRepositoryView.swift; sourceTree = "<group>"; };
 		A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 		A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 		26A8E4BB27F5FFB600DC8B6E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A86CCB7F27F779E70007D4BB /* FavoriteDetailView */,
 				26A8E4BF27F6002A00DC8B6E /* TeamTableView */,
 				26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */,
 				26A8E4BD27F5FFF800DC8B6E /* HomeTableView */,
@@ -374,6 +377,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A86CCB7F27F779E70007D4BB /* FavoriteDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */,
+			);
+			path = FavoriteDetailView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +533,7 @@
 				2669FD8E27F0B23900E96876 /* UIStackView+extensions.swift in Sources */,
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				5EF55C7F27F513B100FB9247 /* Team.swift in Sources */,
+				A86CCB8127F77A190007D4BB /* DetailCoreDataRepositoryView.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
 				A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */,
