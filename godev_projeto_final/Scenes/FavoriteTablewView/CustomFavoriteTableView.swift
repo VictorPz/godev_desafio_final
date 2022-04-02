@@ -13,6 +13,7 @@ class CustomFavoriteTableView: UIView {
         didSet {
             DispatchQueue.main.async {
                 self.favoriteTableView.reloadData()
+                self.verifyListCount()
             }
         }
     }
@@ -23,6 +24,18 @@ class CustomFavoriteTableView: UIView {
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
+    }()
+    
+    private lazy var emptyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Você não possui repositórios favoritados ainda!"
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .systemGray
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.isHidden = true
+        return label
     }()
     
     init() {
@@ -38,11 +51,17 @@ class CustomFavoriteTableView: UIView {
     public func initCoreDataRepos() {
         coreDataRepos = ManagedObjectContext.shared.getRepoData()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
+    private func verifyListCount() {
+        DispatchQueue.main.async { [self] in
+            emptyLabel.isHidden = coreDataRepos.count != 0
+        }
+    }
+    
 }
 
 extension CustomFavoriteTableView: UITableViewDataSource {
@@ -63,6 +82,7 @@ extension CustomFavoriteTableView: ViewCodable {
     func buildHierarchy() {
         
         addSubview(favoriteTableView)
+        addSubview(emptyLabel)
     }
     
     func setupConstraints() {
@@ -71,6 +91,12 @@ extension CustomFavoriteTableView: ViewCodable {
             favoriteTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             favoriteTableView.topAnchor.constraint(equalTo: topAnchor),
             favoriteTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
     }
 }
