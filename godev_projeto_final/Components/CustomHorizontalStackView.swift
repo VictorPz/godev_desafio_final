@@ -14,7 +14,7 @@ class CustomHorizontalStackView: UIStackView {
         configStack()
     }
     
-    private func configStack() {
+    func configStack() {
         translatesAutoresizingMaskIntoConstraints = false
         alignment = .center
         spacing = 8
