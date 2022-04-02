@@ -33,6 +33,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
+
     }
     
     private func delegates() {
@@ -96,6 +97,7 @@ extension HomeViewController: UITableViewDelegate {
         infoRepo = self.tableView.gitHubRepo
         let detailGitRepositoryViewController = DetailGitRepositoryViewController()
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
+        detailGitRepositoryViewController.screenMode = .api
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
 
     }

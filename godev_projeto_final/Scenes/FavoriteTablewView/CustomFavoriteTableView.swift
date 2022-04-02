@@ -54,7 +54,7 @@ extension CustomFavoriteTableView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {return UITableViewCell()}
         
         let repo = coreDataRepos[indexPath.row]
-        cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.details, image: UIImage(data: repo.image)!)
+        cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.description ?? "No Description", image: UIImage(data: repo.owner.avatarImage)!)
         return cell
     }
 }
