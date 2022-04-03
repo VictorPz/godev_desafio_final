@@ -30,7 +30,7 @@ final class TabBarController: UITabBarController {
     
     func setupViewControllers() {
           viewControllers = [
-              tabBarNavController(for: TesteViewController(), title: "Home", navigationTitle: "List", image: UIImage(systemName: "house")!),
+              tabBarNavController(for: HomeViewController(), title: "Home", navigationTitle: "List", image: UIImage(systemName: "house")!),
               tabBarNavController(for: FavoriteViewController(), title: "Favoritos", navigationTitle: "Favoritos", image: UIImage(systemName: "star")!),
               tabBarNavController(for: TeamViewController(), title: "Time", navigationTitle: "Time de Desenvolvedores", image: UIImage(systemName: "person.3")!)
           ]
