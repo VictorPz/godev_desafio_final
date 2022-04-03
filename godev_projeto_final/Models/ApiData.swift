@@ -10,5 +10,5 @@ import Foundation
 struct ApiData: Codable {
     let total_count: Int?
     let incomplete_results: Bool?
-    let items: [GitHubRepo]?
+    let items: [Repo]?
 }

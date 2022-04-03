@@ -18,11 +18,11 @@ typealias onCompletionHandler = (String) -> Void
 // MARK: - Protocols
 
 protocol managedReadProtocol {
-    func getRepoData() -> [CoreDataRepo]
+    func getRepoData() -> [Repo]
 }
 
 protocol managedSaveProtocol {
-    func saveRepoData(repo: CoreDataRepo, onCompletionHandler: onCompletionHandler)
+    func saveRepoData(repo: Repo, onCompletionHandler: onCompletionHandler)
 }
 
 protocol managedDeleteProtocol {
@@ -55,31 +55,30 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         return appDelegate.persistentContainer.viewContext
     }
     
-    func getRepoData() -> [CoreDataRepo] {
-        var repoList: [CoreDataRepo] = []
+    func getRepoData() -> [Repo] {
+        var repoList: [Repo] = []
         
         do {
-            
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
             
-            guard let repos = try getContext().fetch(fetchRequest) as? [NSManagedObject] else { return repoList}
+            guard let repos = try getContext().fetch(fetchRequest) as? [NSManagedObject] else { return repoList }
             
             for repo in repos {
-                
                 if  let id = repo.value(forKey: "id") as? Int,
                     let name = repo.value(forKey: "name") as? String,
                     let avatarImage = repo.value(forKey: "image") as? Data,
                     let description = repo.value(forKey: "details") as? String,
                     let login = repo.value(forKey: "author") as? String,
+                    let imageUrl = repo.value(forKey: "imageURL") as? String,
                     let watchersCount  = repo.value(forKey: "viewsCount") as? Int,
                     let createdAt = repo.value(forKey: "createdAt") as? String,
                     let license = repo.value(forKey: "license") as? String,
                     let htmlUrl = repo.value(forKey: "url") as? String{
                     
-                    let owner = CoreDataOwner(login: login, avatarImage: avatarImage)
-                    let license = CoreDataLicense(name: license)
+                    let owner = Owner(login: login, avatarUrl: imageUrl, avatarImage: avatarImage)
+                    let license = License(name: license)
                     
-                    let repo = CoreDataRepo(id: id, name: name, htmlUrl: htmlUrl, description: description, watchersCount: watchersCount, createdAt: createdAt, owner: owner, license: license)
+                    let repo = Repo(id: id, name: name, htmlURL: htmlUrl, description: description, watchersCount: watchersCount, createdAt: createdAt, owner: owner, license: license)
                     
                     /*let repo = CoreDataRepo(id: id, name: name, image: image, details: details, author: author, viewsCount: viewsCount, createdAt: createdAt, license: license, url: url)*/
                     repoList.append(repo)
@@ -93,7 +92,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         return repoList
     }
     
-    func saveRepoData(repo: CoreDataRepo, onCompletionHandler: (String) -> Void) {
+    func saveRepoData(repo: Repo, onCompletionHandler: (String) -> Void) {
         let context = getContext()
         
         guard let entity = NSEntityDescription.entity(forEntityName: entity, in: context) else { return }
@@ -103,12 +102,13 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         transaction.setValue(repo.id, forKey: "id")
         transaction.setValue(repo.name, forKey: "name")
         transaction.setValue(repo.owner.avatarImage, forKey: "image")
+        transaction.setValue(repo.owner.avatarUrl, forKey: "imageURL")
         transaction.setValue(repo.description, forKey: "details")
         transaction.setValue(repo.owner.login, forKey: "author")
         transaction.setValue(repo.watchersCount, forKey: "viewsCount")
         transaction.setValue(repo.createdAt, forKey: "createdAt")
         transaction.setValue(repo.license?.name, forKey: "license")
-        transaction.setValue(repo.htmlUrl, forKey: "url")
+        transaction.setValue(repo.htmlURL, forKey: "url")
         
         do {
             try context.save()

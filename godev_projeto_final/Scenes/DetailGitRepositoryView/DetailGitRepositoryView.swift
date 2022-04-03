@@ -1,15 +1,17 @@
 //
-//  DetailCoreDataRepositoryView.swift
+//  DetailGitRepositoryView.swift
 //  godev_projeto_final
 //
-//  Created by SP11793 on 01/04/22.
+//  Created by Idwall Go Dev 008 on 25/03/22.
 //
 
 import UIKit
 
-class DetailCoreDataRepositoryView: UIView {
-    
-    private var safeArea: UILayoutGuide!
+protocol DetailRepositoryViewDelegate {
+    func detailButtonPressedGithub(_ value: String)
+}
+
+class DetailRepositoryView: UIView {
     
     lazy var ownerImage: UIImageView = {
         let image = UIImageView()
@@ -152,42 +154,50 @@ class DetailCoreDataRepositoryView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Link do Repositório", for: .normal)
         button.setTitleColor(UIColor.label, for: .normal)
+        button.addTarget(self, action: #selector(callRepo), for: .touchUpInside)
         return button
     }()
     
+    var delegate: DetailRepositoryViewDelegate?
+    var repo: Repo?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        safeArea = safeAreaLayoutGuide
         setupView()
     }
     
-    func setupInfoRepo(infoRepo: CoreDataRepo) {
-        ownerImage.image = UIImage(data: infoRepo.owner.avatarImage)
+    @objc
+    private func callRepo(){
+        guard let repo = self.repo else { return }
+        
+        delegate?.detailButtonPressedGithub(repo.htmlURL)
+    }
+    
+    func setupInfoRepo(infoRepo: Repo) {
+        ownerImage.loadImage(from: infoRepo.owner.avatarUrl)
         descriptionLabel.text = infoRepo.description
         authorNameLabel.text = infoRepo.owner.login
         countInfoLabel.text = String(infoRepo.watchersCount)
         dataInfoLabel.text = String().convertStringDateFormat(stringVariable: infoRepo.createdAt)
         licenceInfoLabel.text = infoRepo.license?.name
+        repo = infoRepo
     }
     
-    public func addFavoriteRepo(infoRepo: CoreDataRepo) {
+    public func addFavoriteRepo(infoRepo: Repo) {
         if let image = ownerImage.image?.pngData() {
             
-            let owner = CoreDataOwner(login: infoRepo.owner.login, avatarImage: image)
-            let license = CoreDataLicense(name: infoRepo.license?.name ?? "No License")
+            let owner = Owner(login: infoRepo.owner.login, avatarUrl: infoRepo.owner.avatarUrl, avatarImage: image)
+            let license = License(name: infoRepo.license?.name ?? "No License")
             
-            let repo = CoreDataRepo(id: infoRepo.id, name: infoRepo.name, htmlUrl: infoRepo.htmlUrl, description: infoRepo.description, watchersCount: infoRepo.watchersCount, createdAt: infoRepo.createdAt, owner: owner, license: license)
+            let repo = Repo(id: infoRepo.id, name: infoRepo.name, htmlURL: infoRepo.htmlURL, description: infoRepo.description, watchersCount: infoRepo.watchersCount, createdAt: infoRepo.createdAt, owner: owner, license: license)
 
             ManagedObjectContext.shared.saveRepoData(repo: repo) { res in
                 print(res)
             }
-            
         }
-        
     }
     
-    public func removeFavoriteRepo(infoRepo: CoreDataRepo) {
+    public func removeFavoriteRepo(infoRepo: Repo) {
         ManagedObjectContext.shared.deleteRepoData(id: infoRepo.id) { res in
             print(res)
         }
@@ -198,10 +208,14 @@ class DetailCoreDataRepositoryView: UIView {
     }
 }
 
-extension DetailCoreDataRepositoryView: ViewCodable {
+extension DetailRepositoryView: ViewCodable {
     func buildHierarchy() {
         
-        verticalStack.addArrangedSubviews(descriptionLabel, authorHorizontalStack, countObserversContaineHorizontalStack, dataCreationContaineHorizontalStack, licenceContaineHorizontalStack)
+        verticalStack.addArrangedSubviews(descriptionLabel,
+                                          authorHorizontalStack,
+                                          countObserversContaineHorizontalStack,
+                                          dataCreationContaineHorizontalStack,
+                                          licenceContaineHorizontalStack)
         authorHorizontalStack.addArrangedSubviews(iconImageView, authorLabel, authorNameLabel)
         countObserversContaineHorizontalStack.addArrangedSubviews(iconEyeImage, countObserversLabel, countInfoLabel)
         dataCreationContaineHorizontalStack.addArrangedSubviews(iconClockImage, dataLabel, dataInfoLabel)
@@ -214,7 +228,7 @@ extension DetailCoreDataRepositoryView: ViewCodable {
     func setupConstraints() {
         //Constraint da imagem
         NSLayoutConstraint.activate([
-            ownerImage.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            ownerImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             ownerImage.heightAnchor.constraint(equalToConstant: 150),
             ownerImage.widthAnchor.constraint(equalToConstant: 150),
             ownerImage.centerXAnchor.constraint(equalTo: centerXAnchor),

@@ -61,14 +61,14 @@ class CustomTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateHomeView(repo: GitHubRepo) {
+    func updateHomeView(repo: Repo) {
         repositoryTitle.text = repo.name
         repositoryDescription.text = repo.description
         
         self.ownerImage.layer.cornerRadius = 42.5
         //por padrão o UIImageView vem com o masksToBounds = false, se não tiver true não arrendonda a imagem, mesmo setando - Rafael
         self.ownerImage.layer.masksToBounds = true
-        ownerImage.loadImage(from: repo.owner.avatar_url)
+        ownerImage.loadImage(from: repo.owner.avatarUrl)
     }
     
     func updateFavoriteView(repoTitle: String, repoDescription: String, image: UIImage) {
