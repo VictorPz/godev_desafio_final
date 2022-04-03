@@ -19,10 +19,10 @@ class GithubViewModel {
         self.githubService = githubService
     }
     
-    func fetchRepositoriesGithub() {
-        githubService.execute { result in
+    func fetchRepositoriesGithub(language: String) {
+        githubService.execute(language: language) { result in
             switch result {
-            case .success(let git ):
+            case .success(let git):
                 self.success(github: git)
             case .failure(let error):
                 self.error(error: error.localizedDescription)

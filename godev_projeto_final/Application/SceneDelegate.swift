@@ -17,8 +17,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = viewController
+//        window?.rootViewController = viewController
+//        window?.makeKeyAndVisible()
+        
+        //mudancas carlos
+        let githubService = GithubService()
+        let githubViewModel = GithubViewModel(githubService: githubService)
+        let testeController = TesteViewController()
+        
+        testeController.viewModel = githubViewModel
+        window?.rootViewController = testeController
         window?.makeKeyAndVisible()
+        
+        
+        
         
     }
 

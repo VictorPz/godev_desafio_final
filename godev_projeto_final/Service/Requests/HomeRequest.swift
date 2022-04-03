@@ -23,7 +23,7 @@ enum HomeRequest: URLRequestProtocol {
 //            let search = "q="
 //            let comp = "language:\(language)&sort=stars&order=\(orderBy ? "desc" : "asc")&per_page=30"
 //            let queryUrl = "\(baseUrl)\(search)\(comp)"
-            return "q=language:swift&desc=\(Environment.order)&sort=\(Environment.sort)&per_page=30"
+            return "desc=\(Environment.order)&sort=\(Environment.sort)&per_page=30&q=language:"
         case .detail:
             return "details=123"
         }

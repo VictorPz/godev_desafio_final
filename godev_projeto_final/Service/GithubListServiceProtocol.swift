@@ -16,6 +16,6 @@ enum GitHubError: Error {
 
 protocol GithubListServiceProtocol: AnyObject {
     
-    func execute(handler: @escaping(Result<ApiData,GitHubError>) -> Void)
+    func execute(language: String, handler: @escaping(Result<ApiData,GitHubError>) -> Void)
     
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate {
     
+
     private var orderList: Bool = true
     private var infoRepo: [Repo] = []
     
@@ -21,14 +22,16 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
         tableView.dataGit()
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .systemBackground
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
         let repo = ManagedObjectContext.shared.getRepoData()
-        
+
         print(repo)
     }
     

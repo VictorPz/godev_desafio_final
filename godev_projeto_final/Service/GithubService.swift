@@ -10,12 +10,14 @@ import Foundation
 class GithubService: GithubListServiceProtocol {
     let session = URLSession.shared
     
+    
     /// Method execute from protocol to consume API
-    func execute(handler: @escaping (Result<ApiData, GitHubError>) -> Void) {
+    func execute(language: String, handler: @escaping (Result<ApiData, GitHubError>) -> Void) {
         let request: HomeRequest = .home
         
         if var baseURL = URLComponents(string: request.baseURL){
-            baseURL.query = request.path
+            
+            baseURL.query = request.path+language
             
             guard let url = baseURL.url else { return }
             
