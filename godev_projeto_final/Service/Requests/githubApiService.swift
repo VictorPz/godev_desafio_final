@@ -15,7 +15,7 @@ enum responseError: Error {
 
 protocol ServiceProtocol {
 
-    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void)
+    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[Repo], responseError>) -> Void)
 }
 
 class githubApiService: ServiceProtocol {
@@ -28,7 +28,7 @@ class githubApiService: ServiceProtocol {
     let session = URLSession.shared
     let baseUrl = "https://api.github.com/search/repositories?"
     
-    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[GitHubRepo], responseError>) -> Void) {
+    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[Repo], responseError>) -> Void) {
         
         let search = "q="
         let comp = "language:\(language)&sort=stars&order=\(orderBy ? "desc" : "asc")&per_page=30"

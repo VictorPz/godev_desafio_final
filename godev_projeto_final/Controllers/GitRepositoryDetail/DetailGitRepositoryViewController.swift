@@ -6,21 +6,12 @@
 //
 
 import UIKit
-
-enum ScreenMode {
-    case api
-    case coredata
-}
+import SafariServices
 
 class DetailGitRepositoryViewController: UIViewController {
     
     let detailGitRepository = DetailRepositoryView()
-    var infoRepo: GitHubRepo!
-    
-    let detailCoredataRepository = DetailCoreDataRepositoryView()
-    var inforepoCoredata: CoreDataRepo!
-    
-    var screenMode: ScreenMode = .api
+    var infoRepo: Repo?
     
     override func loadView() {
         super.loadView()
@@ -32,36 +23,28 @@ class DetailGitRepositoryViewController: UIViewController {
         super.viewDidLoad()
         initTitle()
         initConfigNavBar()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configApiNavBar()
+    }
     
     private func initModeScreen() {
-        switch screenMode {
-        case .api:
-            view = detailGitRepository
-            detailGitRepository.setupInfoRepo(infoRepo: infoRepo)
-        case .coredata:
-            view = detailCoredataRepository
-            detailCoredataRepository.setupInfoRepo(infoRepo: inforepoCoredata)
-        }
+        view = detailGitRepository
+        
+        guard let infoRepo = infoRepo else { return }
+        
+        detailGitRepository.setupInfoRepo(infoRepo: infoRepo)
+        detailGitRepository.delegate = self
     }
     
     private func initTitle() {
-        switch screenMode {
-        case .api:
-            title = infoRepo.name
-        case .coredata:
-            title = inforepoCoredata.name
-        }
+        title = infoRepo?.name
     }
     
     private func initConfigNavBar() {
-        switch screenMode {
-        case .api:
-            configApiNavBar()
-        case .coredata:
-            configCoredataNavBar()
-        }
+        configApiNavBar()
     }
     
     private func configApiNavBar() {
@@ -76,39 +59,22 @@ class DetailGitRepositoryViewController: UIViewController {
     }
     
     @objc func addApiFavorite() {
+        guard let infoRepo = infoRepo else {
+            return
+        }
+
         detailGitRepository.addFavoriteRepo(infoRepo: infoRepo)
         configApiNavBar()
     }
     
     @objc func removeApiFavorite() {
+        guard let infoRepo = infoRepo else {
+            return
+        }
+        
         confirmRemoveFavorite(infoRepo.name) { alert in
-            self.detailGitRepository.removeFavoriteRepo(infoRepo: self.infoRepo)
+            self.detailGitRepository.removeFavoriteRepo(infoRepo: infoRepo)
             self.configApiNavBar()
-        }
-    }
-    
-    //------------------------------------
-    
-    private func configCoredataNavBar() {
-        if isFavorite() {
-            let favorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(removeCoredataFavorite))
-            favorite.tintColor = .red
-            navigationItem.rightBarButtonItem = favorite
-        } else {
-            let favorite = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addCoredataFavorite))
-            navigationItem.rightBarButtonItem = favorite
-        }
-    }
-    
-    @objc func addCoredataFavorite() {
-        detailCoredataRepository.addFavoriteRepo(infoRepo: inforepoCoredata)
-        configCoredataNavBar()
-    }
-    
-    @objc func removeCoredataFavorite() {
-        confirmRemoveFavorite(inforepoCoredata.name) { alert in
-            self.detailCoredataRepository.removeFavoriteRepo(infoRepo: self.inforepoCoredata)
-            self.configCoredataNavBar()
         }
     }
     
@@ -122,10 +88,6 @@ class DetailGitRepositoryViewController: UIViewController {
             }
             
             return false
-        }
-        
-        if repo.firstIndex(where: {$0.id == inforepoCoredata.id}) != nil {
-            return true
         }
         
         return false
@@ -144,4 +106,23 @@ class DetailGitRepositoryViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+}
+
+extension DetailGitRepositoryViewController: DetailRepositoryViewDelegate {
+    func detailButtonPressedGithub(_ value: String) {
+        guard let url = URL(string: value) else { return }
+        
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        
+        let safariViewController = SFSafariViewController(url: url, configuration: config)
+        safariViewController.delegate = self
+        safariViewController.dismissButtonStyle = .close
+        
+        present(safariViewController, animated: true)
+    }
+}
+
+extension DetailGitRepositoryViewController: SFSafariViewControllerDelegate {
+    
 }

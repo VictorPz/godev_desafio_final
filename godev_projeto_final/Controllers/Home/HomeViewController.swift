@@ -10,13 +10,7 @@ import UIKit
 class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate {
     
     private var orderList: Bool = true
-    private var infoRepo: [GitHubRepo] = []
-
-    private var searchText: String = "swift" {
-        didSet {
-            updateData()
-        }
-    }
+    private var infoRepo: [Repo] = []
     
     let tableView = CustomHomeTableView()
     let searchController = UISearchController(searchResultsController: nil)
@@ -24,7 +18,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     override func loadView() {
         self.view = self.tableView
         delegates()
-        updateData()
+        tableView.dataGit()
     }
     
     override func viewDidLoad() {
@@ -33,7 +27,9 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
-
+        let repo = ManagedObjectContext.shared.getRepoData()
+        
+        print(repo)
     }
     
     private func delegates() {
@@ -73,16 +69,14 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
 
     }
     
-    private func updateData() {
-        tableView.dataGit(search: searchText)
-    }
-    
 }
 
 extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        if let newSearch = searchBar.text {
-            searchText = newSearch
+        if let newSearch = searchBar.text, !newSearch.isEmpty {
+            tableView.dataGit(search: newSearch)
+        } else {
+            tableView.dataGit()
         }
     }
     
@@ -92,19 +86,14 @@ extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         infoRepo = self.tableView.gitHubRepo
         let detailGitRepositoryViewController = DetailGitRepositoryViewController()
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
-        detailGitRepositoryViewController.screenMode = .api
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
-
     }
-    
-    
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchText = "swift"
+        tableView.dataGit()
     }
 }

@@ -27,7 +27,8 @@ extension TeamViewController: UITableViewDelegate {
         let detailTeamViewController = DetailTeamViewController()
         let team = Team.populateData()
         let elements = team[indexPath.row]
-        detailTeamViewController.teamDetailView.setupInfo(infoRepo: elements)
+        detailTeamViewController.detailTeamView.setupInfo(infoRepo: elements)
+        detailTeamViewController.title = elements.name
         navigationController?.pushViewController(detailTeamViewController, animated: true)
     }
 }

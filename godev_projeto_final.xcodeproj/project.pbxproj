@@ -17,7 +17,7 @@
 		5EF55C7D27F5137100FB9247 /* CustomTableViewCellTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7C27F5137100FB9247 /* CustomTableViewCellTeam.swift */; };
 		5EF55C7F27F513B100FB9247 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7E27F513B100FB9247 /* Team.swift */; };
 		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
-		882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* GitHubRepo.swift */; };
+		882CC20E27EA12A7009FA401 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* Repo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
 		883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3327E8D6FA00714341 /* SceneDelegate.swift */; };
 		883AAF3627E8D6FA00714341 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3527E8D6FA00714341 /* TabBarController.swift */; };
@@ -36,16 +36,15 @@
 		8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8896C0E227EB80AA001674DD /* ViewCodable.swift */; };
 		88AB2AC927F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2AC827F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift */; };
 		88AB2ACB27F38763005FC9D1 /* CustomFavoriteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2ACA27F38763005FC9D1 /* CustomFavoriteTableView.swift */; };
-		88AB2ACD27F38D39005FC9D1 /* FavoriteDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */; };
 		88FE9E4B27F74C6100190358 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4A27F74C6100190358 /* DetailTeamViewController.swift */; };
-		88FE9E4E27F74DA100190358 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4D27F74DA100190358 /* TeamDetailView.swift */; };
 		88FE9E5027F75E3300190358 /* CustomIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FE9E4F27F75E3300190358 /* CustomIconImage.swift */; };
+		9E2944BE27F8D50800194386 /* DetailItemStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2944BD27F8D50800194386 /* DetailItemStackView.swift */; };
+		9E2944C127F8D9B600194386 /* DetailItemStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2944C027F8D9B600194386 /* DetailItemStackViewDelegate.swift */; };
+		9EA13A7227F913800006D776 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA13A7127F913800006D776 /* TeamDetailView.swift */; };
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
 		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
 		A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848378B27F55EEC00606FF3 /* String+extensions.swift */; };
-		A86CCB8127F77A190007D4BB /* DetailCoreDataRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */; };
 		A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */; };
-		A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +75,7 @@
 		5EF55C7C27F5137100FB9247 /* CustomTableViewCellTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellTeam.swift; sourceTree = "<group>"; };
 		5EF55C7E27F513B100FB9247 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
-		882CC20D27EA12A7009FA401 /* GitHubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepo.swift; sourceTree = "<group>"; };
+		882CC20D27EA12A7009FA401 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		883AAF3127E8D6FA00714341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		883AAF3327E8D6FA00714341 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,16 +98,15 @@
 		8896C0E227EB80AA001674DD /* ViewCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodable.swift; sourceTree = "<group>"; };
 		88AB2AC827F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCustomTableViewCell.swift; sourceTree = "<group>"; };
 		88AB2ACA27F38763005FC9D1 /* CustomFavoriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFavoriteTableView.swift; sourceTree = "<group>"; };
-		88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetail.swift; sourceTree = "<group>"; };
 		88FE9E4A27F74C6100190358 /* DetailTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamViewController.swift; sourceTree = "<group>"; };
-		88FE9E4D27F74DA100190358 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		88FE9E4F27F75E3300190358 /* CustomIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIconImage.swift; sourceTree = "<group>"; };
+		9E2944BD27F8D50800194386 /* DetailItemStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemStackView.swift; sourceTree = "<group>"; };
+		9E2944C027F8D9B600194386 /* DetailItemStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemStackViewDelegate.swift; sourceTree = "<group>"; };
+		9EA13A7127F913800006D776 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A848378B27F55EEC00606FF3 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
-		A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoreDataRepositoryView.swift; sourceTree = "<group>"; };
 		A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
-		A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,25 +167,21 @@
 		26A8E4BB27F5FFB600DC8B6E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-
-				88FE9E4C27F74D8800190358 /* TeamDetailView */,
-
-				A86CCB7F27F779E70007D4BB /* FavoriteDetailView */,
-
+				9EA13A7027F9135F0006D776 /* TeamDetailView */,
 				26A8E4BF27F6002A00DC8B6E /* TeamTableView */,
 				26A8E4BE27F6001100DC8B6E /* FavoriteTablewView */,
 				26A8E4BD27F5FFF800DC8B6E /* HomeTableView */,
-				26A8E4BC27F5FFDA00DC8B6E /* GitRepositoryDetailView */,
+				26A8E4BC27F5FFDA00DC8B6E /* DetailGitRepositoryView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		26A8E4BC27F5FFDA00DC8B6E /* GitRepositoryDetailView */ = {
+		26A8E4BC27F5FFDA00DC8B6E /* DetailGitRepositoryView */ = {
 			isa = PBXGroup;
 			children = (
 				26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */,
 			);
-			path = GitRepositoryDetailView;
+			path = DetailGitRepositoryView;
 			sourceTree = "<group>";
 		};
 		26A8E4BD27F5FFF800DC8B6E /* HomeTableView */ = {
@@ -242,14 +236,6 @@
 			path = Team;
 			sourceTree = "<group>";
 		};
-		26A8E4C327F6007400DC8B6E /* FavoriteDetail */ = {
-			isa = PBXGroup;
-			children = (
-				88AB2ACC27F38D39005FC9D1 /* FavoriteDetail.swift */,
-			);
-			path = FavoriteDetail;
-			sourceTree = "<group>";
-		};
 		26A8E4C427F6009200DC8B6E /* GitRepositoryDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,8 +264,7 @@
 		882CC20C27EA129A009FA401 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				882CC20D27EA12A7009FA401 /* GitHubRepo.swift */,
-				A8FAEA1E27EE3E29003397F1 /* CoreDataRepo.swift */,
+				882CC20D27EA12A7009FA401 /* Repo.swift */,
 				5EF55C7E27F513B100FB9247 /* Team.swift */,
 				9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */,
 			);
@@ -344,7 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				26A8E4C427F6009200DC8B6E /* GitRepositoryDetail */,
-				26A8E4C327F6007400DC8B6E /* FavoriteDetail */,
 				26A8E4C227F6005200DC8B6E /* Team */,
 				26A8E4C127F6004500DC8B6E /* Favorite */,
 				26A8E4C027F6003D00DC8B6E /* Home */,
@@ -374,6 +358,7 @@
 		8896C0DD27EB806E001674DD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9E2944BF27F8D99C00194386 /* DetailItemStackView */,
 				2669FD8A27F0B0E700E96876 /* CustomLabel.swift */,
 				26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */,
 				88FE9E4F27F75E3300190358 /* CustomIconImage.swift */,
@@ -381,10 +366,19 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		88FE9E4C27F74D8800190358 /* TeamDetailView */ = {
+		9E2944BF27F8D99C00194386 /* DetailItemStackView */ = {
 			isa = PBXGroup;
 			children = (
-				88FE9E4D27F74DA100190358 /* TeamDetailView.swift */,
+				9E2944C027F8D9B600194386 /* DetailItemStackViewDelegate.swift */,
+				9E2944BD27F8D50800194386 /* DetailItemStackView.swift */,
+			);
+			path = DetailItemStackView;
+			sourceTree = "<group>";
+		};
+		9EA13A7027F9135F0006D776 /* TeamDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				9EA13A7127F913800006D776 /* TeamDetailView.swift */,
 			);
 			path = TeamDetailView;
 			sourceTree = "<group>";
@@ -395,14 +389,6 @@
 				A842E5DA27EA5ACC0014E63B /* CoreData.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A86CCB7F27F779E70007D4BB /* FavoriteDetailView */ = {
-			isa = PBXGroup;
-			children = (
-				A86CCB8027F77A190007D4BB /* DetailCoreDataRepositoryView.swift */,
-			);
-			path = FavoriteDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,30 +525,29 @@
 				5EF55C7B27F5135500FB9247 /* CustomTeamTableView.swift in Sources */,
 				88AB2AC927F381FA005FC9D1 /* FavoriteCustomTableViewCell.swift in Sources */,
 				A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */,
+				9EA13A7227F913800006D776 /* TeamDetailView.swift in Sources */,
 				88FE9E4B27F74C6100190358 /* DetailTeamViewController.swift in Sources */,
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
 				26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */,
 				88AB2ACB27F38763005FC9D1 /* CustomFavoriteTableView.swift in Sources */,
-				88FE9E4E27F74DA100190358 /* TeamDetailView.swift in Sources */,
 				8896C0DF27EB8085001674DD /* CustomTableViewCell.swift in Sources */,
 				2669FD8B27F0B0E700E96876 /* CustomLabel.swift in Sources */,
 				26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */,
-				882CC20E27EA12A7009FA401 /* GitHubRepo.swift in Sources */,
+				9E2944BE27F8D50800194386 /* DetailItemStackView.swift in Sources */,
+				882CC20E27EA12A7009FA401 /* Repo.swift in Sources */,
 				A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */,
 				883AAF3627E8D6FA00714341 /* TabBarController.swift in Sources */,
-				88AB2ACD27F38D39005FC9D1 /* FavoriteDetail.swift in Sources */,
 				2669FD8E27F0B23900E96876 /* UIStackView+extensions.swift in Sources */,
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				5EF55C7F27F513B100FB9247 /* Team.swift in Sources */,
-				A86CCB8127F77A190007D4BB /* DetailCoreDataRepositoryView.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
-				A8FAEA1F27EE3E29003397F1 /* CoreDataRepo.swift in Sources */,
 				88FE9E5027F75E3300190358 /* CustomIconImage.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
 				2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
+				9E2944C127F8D9B600194386 /* DetailItemStackViewDelegate.swift in Sources */,
 				8896C0D627EB6B14001674DD /* HomeViewController.swift in Sources */,
 				8896C0D827EB6CB0001674DD /* FavoriteViewController.swift in Sources */,
 				8896C0DA27EB6CD1001674DD /* TeamViewController.swift in Sources */,
@@ -738,7 +723,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QY59Z7GK88;
+				DEVELOPMENT_TEAM = N9DGLJU24L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = godev_projeto_final/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -751,7 +736,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.godev.joaovictor.godev-projeto-final";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.rogeriotavares.godev-projeto-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -766,7 +751,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QY59Z7GK88;
+				DEVELOPMENT_TEAM = N9DGLJU24L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = godev_projeto_final/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -779,7 +764,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.godev.joaovictor.godev-projeto-final";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.rogeriotavares.godev-projeto-final";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

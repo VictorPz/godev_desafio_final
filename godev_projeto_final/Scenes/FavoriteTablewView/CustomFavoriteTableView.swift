@@ -9,7 +9,7 @@ import UIKit
 
 class CustomFavoriteTableView: UIView {
     
-    public var coreDataRepos: [CoreDataRepo] = [] {
+    public var coreDataRepos: [Repo] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.favoriteTableView.reloadData()
@@ -73,7 +73,7 @@ extension CustomFavoriteTableView: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {return UITableViewCell()}
         
         let repo = coreDataRepos[indexPath.row]
-        cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.description ?? "No Description", image: UIImage(data: repo.owner.avatarImage)!)
+        cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.description ?? "No Description", image: UIImage(data: repo.owner.avatarImage!)!)
         return cell
     }
 }

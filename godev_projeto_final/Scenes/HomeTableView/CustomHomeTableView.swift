@@ -7,13 +7,20 @@
 
 import UIKit
 
+enum StateEnum {
+    case loading
+    case normal
+}
+
 class CustomHomeTableView: UIView {
 
-    public var gitHubRepo: [GitHubRepo] = [] {
+    public var gitHubRepo: [Repo] = [] {
         didSet {
             self.verifyListCount()
         }
     }
+    
+    var state: StateEnum = .normal
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -60,19 +67,30 @@ class CustomHomeTableView: UIView {
 
 extension CustomHomeTableView: UITableViewDataSource {
     func dataGit(search: String = "swift", orderBy: Bool = true) {
-        var language = search
+        if state == .normal {
+            state = .loading
+        } else {
+            return
+        }
+        var language = search.trimmingCharacters(in: .whitespacesAndNewlines)
         if language.isEmpty {
             language = "swift"
         }
         startLoading()
-        githubApiService.shared.fetchList(for: search, orderBy: orderBy) { result in
+        githubApiService.shared.fetchList(for: language, orderBy: orderBy) { result in
             switch result {
             case .success(let results):
                 self.gitHubRepo = results
-                self.onSuccessRequest()
-            case .failure(let error):
-                print("error: \(error)")
+                if results.count == 0 {
+                    self.onErrorRequest()
+                } else {
+                    self.onSuccessRequest()
+                }
+            case .failure(_):
+                self.gitHubRepo = []
+                self.onErrorRequest()
             }
+            self.state = .normal
         }
     }
     
@@ -91,6 +109,7 @@ extension CustomHomeTableView: UITableViewDataSource {
     private func onErrorRequest() {
         DispatchQueue.main.async {
             self.stopLoading()
+            self.tableView.isHidden = true
         }
     }
     
@@ -122,8 +141,10 @@ extension CustomHomeTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell else { return UITableViewCell() }
+        
         let repo = gitHubRepo[indexPath.row]
         cell.updateHomeView(repo: repo)
+        
         return cell
     }
 }
