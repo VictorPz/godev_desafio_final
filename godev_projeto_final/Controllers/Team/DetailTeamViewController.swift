@@ -9,7 +9,7 @@ import UIKit
 import SafariServices
 import MessageUI
 
-class DetailTeamViewController: UIViewController {
+class DetailTeamViewController: UIViewController, SFSafariViewControllerDelegate {
     
     let detailTeamView = TeamDetailView()
     
