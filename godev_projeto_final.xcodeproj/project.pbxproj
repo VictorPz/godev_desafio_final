@@ -23,6 +23,8 @@
 		5EF55CB827FA0A2800FB9247 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB727FA0A2800FB9247 /* Environment.swift */; };
 		5EF55CBA27FA127200FB9247 /* GithubListServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB927FA127200FB9247 /* GithubListServiceProtocol.swift */; };
 		5EF55CBC27FA147B00FB9247 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CBB27FA147B00FB9247 /* GithubService.swift */; };
+		5EF55CBF27FA192B00FB9247 /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CBE27FA192B00FB9247 /* GithubViewModel.swift */; };
+		5EF55CC127FA194E00FB9247 /* GithubViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CC027FA194E00FB9247 /* GithubViewModelDelegate.swift */; };
 		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
 		882CC20E27EA12A7009FA401 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* Repo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
@@ -88,6 +90,8 @@
 		5EF55CB727FA0A2800FB9247 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		5EF55CB927FA127200FB9247 /* GithubListServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListServiceProtocol.swift; sourceTree = "<group>"; };
 		5EF55CBB27FA147B00FB9247 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		5EF55CBE27FA192B00FB9247 /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
+		5EF55CC027FA194E00FB9247 /* GithubViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModelDelegate.swift; sourceTree = "<group>"; };
 		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
 		882CC20D27EA12A7009FA401 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -272,6 +276,15 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		5EF55CBD27FA190700FB9247 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5EF55CBE27FA192B00FB9247 /* GithubViewModel.swift */,
+				5EF55CC027FA194E00FB9247 /* GithubViewModelDelegate.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		882CC20927EA06B9009FA401 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +329,7 @@
 		883AAF3027E8D6FA00714341 /* godev_projeto_final */ = {
 			isa = PBXGroup;
 			children = (
+				5EF55CBD27FA190700FB9247 /* ViewModels */,
 				26A8E4BB27F5FFB600DC8B6E /* Scenes */,
 				26A8E4B827F5FEE000DC8B6E /* Application */,
 				26706DAB27EE69D2003A67DD /* Commons */,
@@ -565,6 +579,7 @@
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				5EF55CBA27FA127200FB9247 /* GithubListServiceProtocol.swift in Sources */,
 				5EF55C7F27F513B100FB9247 /* Team.swift in Sources */,
+				5EF55CBF27FA192B00FB9247 /* GithubViewModel.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
 				5EF55CB227FA06E500FB9247 /* URLRequestProtocol.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
@@ -578,6 +593,7 @@
 				9E2944C127F8D9B600194386 /* DetailItemStackViewDelegate.swift in Sources */,
 				8896C0D627EB6B14001674DD /* HomeViewController.swift in Sources */,
 				8896C0D827EB6CB0001674DD /* FavoriteViewController.swift in Sources */,
+				5EF55CC127FA194E00FB9247 /* GithubViewModelDelegate.swift in Sources */,
 				8896C0DA27EB6CD1001674DD /* TeamViewController.swift in Sources */,
 				883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */,
 				5EF55C7D27F5137100FB9247 /* CustomTableViewCellTeam.swift in Sources */,
