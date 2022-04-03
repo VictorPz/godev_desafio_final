@@ -16,6 +16,11 @@
 		5EF55C7B27F5135500FB9247 /* CustomTeamTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */; };
 		5EF55C7D27F5137100FB9247 /* CustomTableViewCellTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7C27F5137100FB9247 /* CustomTableViewCellTeam.swift */; };
 		5EF55C7F27F513B100FB9247 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7E27F513B100FB9247 /* Team.swift */; };
+		5EF55CB027FA05E000FB9247 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CAF27FA05E000FB9247 /* Constants.swift */; };
+		5EF55CB227FA06E500FB9247 /* URLRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB127FA06E500FB9247 /* URLRequestProtocol.swift */; };
+		5EF55CB427FA07F400FB9247 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB327FA07F400FB9247 /* HTTPMethod.swift */; };
+		5EF55CB627FA08EC00FB9247 /* HomeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB527FA08EC00FB9247 /* HomeRequest.swift */; };
+		5EF55CB827FA0A2800FB9247 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55CB727FA0A2800FB9247 /* Environment.swift */; };
 		882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20A27EA06EE009FA401 /* githubApiService.swift */; };
 		882CC20E27EA12A7009FA401 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882CC20D27EA12A7009FA401 /* Repo.swift */; };
 		883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883AAF3127E8D6FA00714341 /* AppDelegate.swift */; };
@@ -74,6 +79,11 @@
 		5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTeamTableView.swift; sourceTree = "<group>"; };
 		5EF55C7C27F5137100FB9247 /* CustomTableViewCellTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCellTeam.swift; sourceTree = "<group>"; };
 		5EF55C7E27F513B100FB9247 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		5EF55CAF27FA05E000FB9247 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5EF55CB127FA06E500FB9247 /* URLRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestProtocol.swift; sourceTree = "<group>"; };
+		5EF55CB327FA07F400FB9247 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		5EF55CB527FA08EC00FB9247 /* HomeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequest.swift; sourceTree = "<group>"; };
+		5EF55CB727FA0A2800FB9247 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		882CC20A27EA06EE009FA401 /* githubApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubApiService.swift; sourceTree = "<group>"; };
 		882CC20D27EA12A7009FA401 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		883AAF2E27E8D6FA00714341 /* godev_projeto_final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = godev_projeto_final.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +159,7 @@
 		26706DAB27EE69D2003A67DD /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				5EF55CAF27FA05E000FB9247 /* Constants.swift */,
 				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
 				2669FD8C27F0B21100E96876 /* Extensions */,
 			);
@@ -160,6 +171,7 @@
 			children = (
 				883AAF3127E8D6FA00714341 /* AppDelegate.swift */,
 				883AAF3327E8D6FA00714341 /* SceneDelegate.swift */,
+				5EF55CB727FA0A2800FB9247 /* Environment.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -249,6 +261,9 @@
 			children = (
 				A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */,
 				882CC20A27EA06EE009FA401 /* githubApiService.swift */,
+				5EF55CB127FA06E500FB9247 /* URLRequestProtocol.swift */,
+				5EF55CB327FA07F400FB9247 /* HTTPMethod.swift */,
+				5EF55CB527FA08EC00FB9247 /* HomeRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -527,6 +542,7 @@
 				A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */,
 				9EA13A7227F913800006D776 /* TeamDetailView.swift in Sources */,
 				88FE9E4B27F74C6100190358 /* DetailTeamViewController.swift in Sources */,
+				5EF55CB627FA08EC00FB9247 /* HomeRequest.swift in Sources */,
 				8896C0DC27EB7D4B001674DD /* CustomHomeTableView.swift in Sources */,
 				883AAF3C27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld in Sources */,
 				26706DA727EE6055003A67DD /* DetailGitRepositoryViewController.swift in Sources */,
@@ -542,10 +558,14 @@
 				8896C0E327EB80AA001674DD /* ViewCodable.swift in Sources */,
 				5EF55C7F27F513B100FB9247 /* Team.swift in Sources */,
 				9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */,
+				5EF55CB227FA06E500FB9247 /* URLRequestProtocol.swift in Sources */,
 				883AAF3227E8D6FA00714341 /* AppDelegate.swift in Sources */,
+				5EF55CB427FA07F400FB9247 /* HTTPMethod.swift in Sources */,
 				88FE9E5027F75E3300190358 /* CustomIconImage.swift in Sources */,
+				5EF55CB027FA05E000FB9247 /* Constants.swift in Sources */,
 				8896C0E127EB809E001674DD /* UIImageView+Extension.swift in Sources */,
 				2669FD9027F0B28600E96876 /* UIView+extensions.swift in Sources */,
+				5EF55CB827FA0A2800FB9247 /* Environment.swift in Sources */,
 				882CC20B27EA06EE009FA401 /* githubApiService.swift in Sources */,
 				9E2944C127F8D9B600194386 /* DetailItemStackViewDelegate.swift in Sources */,
 				8896C0D627EB6B14001674DD /* HomeViewController.swift in Sources */,
