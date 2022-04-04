@@ -20,6 +20,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
+
+//        let githubService = GithubService()
+//        let githubViewModel = GithubViewModel(githubService: githubService)
+//        let testeController = TesteViewController()
+//
+//        testeController.viewModel = githubViewModel
+//        window?.rootViewController = testeController
+//        window?.makeKeyAndVisible()
+        
+        
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
