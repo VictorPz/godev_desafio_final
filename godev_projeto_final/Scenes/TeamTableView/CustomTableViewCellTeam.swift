@@ -7,16 +7,14 @@
 
 import UIKit
 
-class CustomTableViewCellTeam: UITableViewCell {
+final class CustomTableViewCellTeam: UITableViewCell {
     
     static let identifier = "CustomTableViewCellTeam"
     
     // MARK: - Components
     
-    private lazy var photoImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
+    private lazy var photoImage: CustomIconImage = {
+        let image = CustomIconImage()
         return image
     }()
     
@@ -79,7 +77,7 @@ extension CustomTableViewCellTeam: ViewCodable{
             
             stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.Margin.defaultTop),
             stackView.leadingAnchor.constraint(equalTo: photoImage.trailingAnchor, constant: Metrics.Margin.defaultLeading),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom),
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom - 15),
             stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing - 20)
         ])
     }

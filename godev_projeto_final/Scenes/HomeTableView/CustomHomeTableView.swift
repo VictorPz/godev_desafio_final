@@ -12,7 +12,9 @@ enum StateEnum {
     case normal
 }
 
-class CustomHomeTableView: UIView {
+final class CustomHomeTableView: UIView {
+    
+    //MARK: - Components
     
     public var gitHubRepo: [Repo] = [] {
         didSet {
@@ -20,11 +22,11 @@ class CustomHomeTableView: UIView {
         }
     }
     
-    var viewController: HomeViewController?
+    private var viewController: HomeViewController?
     
     var delegate: CustomHomeTableViewDelegate?
     
-    var state: StateEnum = .normal
+    private var state: StateEnum = .normal
     
     lazy var tableView: CustomTableView = {
         let tableView = CustomTableView()
@@ -46,6 +48,8 @@ class CustomHomeTableView: UIView {
         return label
     }()
     
+    //MARK: - Inicialization
+    
     init() {
         super.init(frame: .zero)
         tableView.reloadData()
@@ -60,6 +64,8 @@ class CustomHomeTableView: UIView {
     }
     
 }
+
+//MARK: - Extensions
 
 extension CustomHomeTableView: UITableViewDataSource {
     func dataGit(search: String = "swift", orderBy: Bool = true) {

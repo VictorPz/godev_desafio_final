@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTableView: UITableView {
+final class CustomTableView: UITableView {
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)

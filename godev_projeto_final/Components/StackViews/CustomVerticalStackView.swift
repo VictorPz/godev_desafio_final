@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomVerticalStackView: UIStackView {
+final class CustomVerticalStackView: UIStackView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

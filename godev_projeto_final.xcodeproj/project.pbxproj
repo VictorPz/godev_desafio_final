@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				A8B5FAF027FBE8190072D454 /* DesignerSystem */,
-				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
+				8842004827FC9ADB0078F271 /* SetupProtocol */,
 				2669FD8C27F0B21100E96876 /* Extensions */,
 			);
 			path = Commons;
@@ -349,7 +349,7 @@
 				26A8E4C227F6005200DC8B6E /* Team */,
 				26A8E4C127F6004500DC8B6E /* Favorite */,
 				26A8E4C027F6003D00DC8B6E /* Home */,
-				883AAF3527E8D6FA00714341 /* TabBarController.swift */,
+				8842004727FC974B0078F271 /* TabBar */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +370,22 @@
 				883AAF3A27E8D6FA00714341 /* godev_projeto_final.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		8842004727FC974B0078F271 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				883AAF3527E8D6FA00714341 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8842004827FC9ADB0078F271 /* SetupProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
+			);
+			path = SetupProtocol;
 			sourceTree = "<group>";
 		};
 		8896C0DD27EB806E001674DD /* Components */ = {

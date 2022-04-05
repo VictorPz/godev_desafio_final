@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomSubTitleLabel: UILabel {
+final class CustomSubTitleLabel: UILabel {
     
     
     override init(frame: CGRect) {

@@ -9,6 +9,8 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .defaultBackgroundColor
@@ -18,6 +20,8 @@ final class TabBarController: UITabBarController {
         tabBar.tintColor = .defaultTabBarSelectedItemTintColor
         setupViewControllers()
     }
+    
+    //MARK: - Methods
     
     private func tabBarNavController(for rootViewController: UIViewController, title: String,
                                      navigationTitle: String,

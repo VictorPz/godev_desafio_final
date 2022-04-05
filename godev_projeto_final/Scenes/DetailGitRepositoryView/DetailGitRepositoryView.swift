@@ -13,110 +13,112 @@ protocol DetailRepositoryViewDelegate {
 
 class DetailRepositoryView: UIView {
     
-    lazy var ownerImage: CustomIconImage = {
+    //MARK: - Components
+    
+    private lazy var ownerImage: CustomIconImage = {
         let image = CustomIconImage()
         return image
     }()
     
-    lazy var verticalStack: CustomVerticalStackView = {
+    private lazy var verticalStack: CustomVerticalStackView = {
         let stack = CustomVerticalStackView(frame: .zero)
         return stack
     }()
     
-    lazy var descriptionLabel: CustomBodyLabel = {
+    private lazy var descriptionLabel: CustomBodyLabel = {
         let description = CustomBodyLabel()
         return description
     }()
     
-    lazy var authorHorizontalStack: CustomHorizontalStackView = {
+    private lazy var authorHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconImageView: CustomIconImage = {
+    private lazy var iconImageView: CustomIconImage = {
         let icon = CustomIconImage()
         icon.image = UIImage(systemName: "person.crop.square")
         return icon
     }()
     
-    lazy var authorLabel: CustomTitleLabel = {
+    private lazy var authorLabel: CustomTitleLabel = {
         let label = CustomTitleLabel()
         label.text = "Autor:"
         return label
     }()
     
-    lazy var authorNameLabel: CustomSubTitleLabel = {
+    private lazy var authorNameLabel: CustomSubTitleLabel = {
         let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var countObserversContaineHorizontalStack: CustomHorizontalStackView = {
+    private lazy var countObserversContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconEyeImage: CustomIconImage = {
+    private lazy var iconEyeImage: CustomIconImage = {
         let icon = CustomIconImage()
         icon.image = UIImage(systemName: "eye")
         return icon
     }()
     
-    lazy var countObserversLabel: CustomTitleLabel = {
+    private lazy var countObserversLabel: CustomTitleLabel = {
         let label = CustomTitleLabel()
         label.text = "Contatem de observadores:"
         return label
     }()
     
-    lazy var countInfoLabel: CustomSubTitleLabel = {
+    private lazy var countInfoLabel: CustomSubTitleLabel = {
         let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var dataCreationContaineHorizontalStack: CustomHorizontalStackView = {
+    private lazy var dataCreationContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconClockImage: CustomIconImage = {
+    private lazy var iconClockImage: CustomIconImage = {
         let icon = CustomIconImage()
         icon.image = UIImage(systemName: "alarm.fill")
         return icon
     }()
     
-    lazy var dataLabel: CustomTitleLabel = {
+    private lazy var dataLabel: CustomTitleLabel = {
         let label = CustomTitleLabel()
         label.text = "Data de criação:"
         return label
     }()
     
-    lazy var dataInfoLabel: CustomSubTitleLabel = {
+    private lazy var dataInfoLabel: CustomSubTitleLabel = {
         let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var licenceContaineHorizontalStack: CustomHorizontalStackView = {
+    private lazy var licenceContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconGlobeImage: CustomIconImage = {
+    private lazy var iconGlobeImage: CustomIconImage = {
         let icon = CustomIconImage()
         icon.image = UIImage(systemName: "globe")
         return icon
     }()
     
-    lazy var licenceLabel: CustomTitleLabel = {
+    private lazy var licenceLabel: CustomTitleLabel = {
         let label = CustomTitleLabel()
         label.text = "Licença:"
         return label
     }()
     
-    lazy var licenceInfoLabel: CustomSubTitleLabel = {
+    private lazy var licenceInfoLabel: CustomSubTitleLabel = {
         let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var linkRepoButton: CustomButton = {
+    private lazy var linkRepoButton: CustomButton = {
         let button = CustomButton()
         button.setTitle("Link do Repositório", for: .normal)
         button.addTarget(self, action: #selector(callRepo), for: .touchUpInside)
@@ -125,6 +127,8 @@ class DetailRepositoryView: UIView {
     
     var delegate: DetailRepositoryViewDelegate?
     var repo: Repo?
+    
+    //MARK: - Inicialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -172,6 +176,8 @@ class DetailRepositoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+//MARK: - Extensions
 
 extension DetailRepositoryView: ViewCodable {
     func buildHierarchy() {
