@@ -13,32 +13,20 @@ class CustomTableViewCell: UITableViewCell {
     
     static let identifier = "CustomTableViewCell"
     
-    private lazy var verticalStack: UIStackView = {
-        let stack  = UIStackView(frame: .zero)
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.alignment = .fill
-        stack.contentMode = .top
-        stack.spacing = 8
-        stack.axis = .vertical
+    private lazy var verticalStack: CustomVerticalStackView = {
+        let stack  = CustomVerticalStackView(frame: .zero)
         return stack
     }()
         
-    private lazy var repositoryTitle: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 17)
+    
+    private lazy var repositoryTitle: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         return label
     }()
 
-    //Tava como UITextView mudei para UILabel - Rafael
-    private lazy var repositoryDescription: UILabel = {
-        let description = UILabel()
-        description.translatesAutoresizingMaskIntoConstraints = false
-        description.textColor = UIColor.black
-        description.numberOfLines = 2
-        description.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        description.textAlignment = .justified
+
+    private lazy var repositoryDescription: CustomBodyLabel = {
+        let description = CustomBodyLabel()
         return description
     }()
     
@@ -65,8 +53,7 @@ class CustomTableViewCell: UITableViewCell {
         repositoryTitle.text = repo.name
         repositoryDescription.text = repo.description
         
-        self.ownerImage.layer.cornerRadius = 42.5
-        //por padrão o UIImageView vem com o masksToBounds = false, se não tiver true não arrendonda a imagem, mesmo setando - Rafael
+        self.ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
         self.ownerImage.layer.masksToBounds = true
         ownerImage.loadImage(from: repo.owner.avatarUrl)
     }
@@ -76,7 +63,7 @@ class CustomTableViewCell: UITableViewCell {
         repositoryDescription.text = repoDescription
         ownerImage.image = image
         ownerImage.layer.masksToBounds = true
-        ownerImage.layer.cornerRadius = 42.5
+        ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
     }
 }
 
@@ -89,29 +76,22 @@ extension CustomTableViewCell: ViewCodable {
         
         verticalStack.addArrangedSubview(repositoryTitle)
         verticalStack.addArrangedSubview(repositoryDescription)
-        
+    
         addSubview(verticalStack)
         
     }
     
     func setupConstraints() {
-        ownerImage.layer.cornerRadius = ownerImage.layer.frame.width / 2
         NSLayoutConstraint.activate([
-            ownerImage.heightAnchor.constraint(equalToConstant: 85),
-            ownerImage.widthAnchor.constraint(equalToConstant: 85),
-            ownerImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            ownerImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightCellImage),
+            ownerImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthCellImage),
+            ownerImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
             ownerImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            //ownerImage.topAnchor.constraint(lessThanOrEqualTo: topAnchor, constant: 10),
-            //ownerImage.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -10),
             
-            //Como está dentro de uma stack view não precisa desses caras, pois ele quebra o layout - Rafael
-            //repositoryTitle.heightAnchor.constraint(equalToConstant: 20),
-            //repositoryDescription.heightAnchor.constraint(equalTo: heightAnchor, constant: 50),
-            
-            verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-            verticalStack.leadingAnchor.constraint(equalTo: ownerImage.trailingAnchor, constant: 10),
-            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            verticalStack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35)
+            verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.Margin.defaultTop),
+            verticalStack.leadingAnchor.constraint(equalTo: ownerImage.trailingAnchor, constant: Metrics.Margin.defaultLeading),
+            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom),
+            verticalStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing - 20)
         ])
     }
 }

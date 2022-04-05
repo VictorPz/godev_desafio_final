@@ -60,6 +60,8 @@ extension DetailTeamViewController: TeamDetailViewDelegate {
         let safariViewController = SFSafariViewController(url: url, configuration: config)
         safariViewController.delegate = self
         safariViewController.dismissButtonStyle = .close
+        safariViewController.preferredBarTintColor = .defaultBackgroundColor
+        safariViewController.preferredControlTintColor = .defaultTintColor
         
         present(safariViewController, animated: true)
     }
@@ -73,6 +75,8 @@ extension DetailTeamViewController: TeamDetailViewDelegate {
         let safariViewController = SFSafariViewController(url: url, configuration: config)
         safariViewController.delegate = self
         safariViewController.dismissButtonStyle = .close
+        safariViewController.preferredBarTintColor = .defaultBackgroundColor
+        safariViewController.preferredControlTintColor = .defaultTintColor
         
         present(safariViewController, animated: true)
     }

@@ -11,28 +11,19 @@ protocol TeamDetailViewDelegate: DetailItemStackViewDelegate {}
 
 class TeamDetailView: UIView {
     
-    lazy var verticalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.alignment = .fill
-        stack.contentMode = .top
-        stack.spacing = 8
-        stack.axis = .vertical
+    lazy var verticalStack: CustomVerticalStackView = {
+        let stack = CustomVerticalStackView()
         return stack
     }()
     
     lazy var personImage: UIImageView = {
         let image = CustomIconImage()
-        image.image = UIImage(systemName: "person")
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    lazy var descriptionLabel: UILabel = {
-        let description = CustomLabel()
-        description.text = "A curated list of awesome iOS ecosystem, including Objective-C and Swift Projects"
-        description.font = UIFont.systemFont(ofSize: 17, weight: .light)
-        description.textAlignment = .justified
+    lazy var descriptionLabel: CustomBodyLabel = {
+        let description = CustomBodyLabel()
         return description
     }()
     
@@ -104,26 +95,26 @@ extension TeamDetailView: ViewCodable {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            personImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            personImage.heightAnchor.constraint(equalToConstant: 200),
-            personImage.widthAnchor.constraint(equalToConstant: 200),
+            personImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metrics.Margin.defaultTop),
+            personImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightImage),
+            personImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthImage),
             personImage.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
         
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: 20),
-            descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            descriptionLabel.topAnchor.constraint(equalTo: personImage.bottomAnchor, constant: Metrics.Margin.defaultTop),
+            descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
+            descriptionLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing),
         ])
         
         NSLayoutConstraint.activate([
-            verticalStack.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 23),
-            verticalStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            verticalStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            verticalStack.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: Metrics.Margin.defaultTop),
+            verticalStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
+            verticalStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing),
         ])
     }
     
     func applyAdditionalChanges() {
-        backgroundColor = .systemBackground
+        backgroundColor = .defaultBackgroundColor
     }
 }

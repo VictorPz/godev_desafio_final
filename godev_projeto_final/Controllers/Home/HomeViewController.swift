@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate, CustomHomeTableViewDelegate {
     
     func showAlert(errorType: responseError) {
-        
         var alert = UIAlertController()
         
         switch errorType {
@@ -24,11 +23,9 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
             alert = UIAlertController(title: "Dados Indisponíveis", message: "Não foi possível encontrar dados através da requisição.",
                                       preferredStyle: .alert)
         }
-        
+    
         let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
         alert.addAction(okButton)
-        
         present(alert, animated: true, completion: nil)
     }
     
@@ -38,6 +35,11 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     let tableView = CustomHomeTableView()
     let searchController = UISearchController(searchResultsController: nil)
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavBar()
+    }
+    
     override func loadView() {
         self.view = self.tableView
         tableView.delegate = self
@@ -46,14 +48,9 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        
+        super.viewDidLoad()        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
-        let repo = ManagedObjectContext.shared.getRepoData()
-        
-        print(repo)
     }
     
     private func delegates() {
@@ -63,7 +60,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     private func navigationControllerSetup() {
         navigationItem.searchController = searchController
         self.definesPresentationContext = true
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = true
         self.searchBarControllerSetup()
     }
     
@@ -76,18 +73,26 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
         
         searchController.searchBar.delegate = self
         
-        //Não consegui deixar a searchBar no tamanho 45 - verificar - Rafael
         searchController.searchBar.sizeToFit()
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.tintColor = .defaultTintColor
         
-        //Configuration Button Order by
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(orderByDescAndAsc))
-        navigationController?.navigationBar.tintColor = .label
         
     }
     
-    //Função para chamar a ordenação da lista
+    private func setupNavBar() {
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.backgroundColor = .defaultBackgroundColor
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.defaultNavControllerTitleColor]
+        
+        navigationController?.navigationBar.tintColor = .defaultTintColor
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+    }
+    
     @objc private func orderByDescAndAsc() {
         tableView.orderBy()
         

@@ -9,15 +9,15 @@ import UIKit
 
 class CustomIconImage: UIImageView {
     
-        init() {
-            super.init(frame: .zero)
-            configImage()
+    init() {
+        super.init(frame: .zero)
+        configImage()
     }
     
     private func configImage() {
         translatesAutoresizingMaskIntoConstraints = false
         contentMode = .scaleAspectFill
-        tintColor = .label
+        tintColor = .defaultIconTintColor
     }
     
     required init(coder: NSCoder) {
