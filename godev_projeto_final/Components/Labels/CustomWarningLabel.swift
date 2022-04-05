@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomWarningLabel: UILabel {
+final class CustomWarningLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

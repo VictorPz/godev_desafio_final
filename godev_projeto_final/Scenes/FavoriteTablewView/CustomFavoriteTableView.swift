@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CustomFavoriteTableView: UIView {
+final class CustomFavoriteTableView: UIView {
+    
+    //MARK: - Components
     
     public var coreDataRepos: [Repo] = [] {
         didSet {
@@ -55,6 +57,8 @@ class CustomFavoriteTableView: UIView {
     }
     
 }
+
+//MARK: - Extensions
 
 extension CustomFavoriteTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

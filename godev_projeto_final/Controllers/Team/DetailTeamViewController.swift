@@ -9,9 +9,11 @@ import UIKit
 import SafariServices
 import MessageUI
 
-class DetailTeamViewController: UIViewController, SFSafariViewControllerDelegate {
+final class DetailTeamViewController: UIViewController, SFSafariViewControllerDelegate {
     
     let detailTeamView = TeamDetailView()
+    
+    //MARK: - Life Cycle
     
     override func loadView() {
         self.view = self.detailTeamView
@@ -22,6 +24,8 @@ class DetailTeamViewController: UIViewController, SFSafariViewControllerDelegate
     }
     
 }
+
+//MARK: - Extensions
 
 extension DetailTeamViewController: TeamDetailViewDelegate {
     func detailButtonPressedPhone(_ value: String) {
@@ -83,7 +87,6 @@ extension DetailTeamViewController: TeamDetailViewDelegate {
 }
 
 extension DetailTeamViewController: MFMailComposeViewControllerDelegate {
-    
 }
 
 

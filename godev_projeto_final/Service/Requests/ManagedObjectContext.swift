@@ -146,32 +146,3 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
     }
     
 }
-
-/*
- // SAVE
-let string = "2022-03-01T18:10:07Z"
-
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-let dateString = dateFormatter.date(from: string)!
-
-let image = UIImage(systemName: "square.and.arrow.up")?.pngData()
-
-let repoTest = CoreDataRepo(id: "465005226", name: "TrafficLightsApp", image: image!, details: "homework  2.1 task 1", author: "StGeAr", viewsCount: 0, createdAt: "jo", license: "MIT", url: "https://api.github.com/repos/StGeAr/TrafficLightsApp")
-
-ManagedObjectContext.shared.saveRepoData(repo: repoTest) { res in
-    print(res)
-}
-
-// GET
-var repoList: [CoreDataRepo] = []
-
-repoList = ManagedObjectContext.shared.getRepoData()
-
-print(repoList)
-
-// DELETE
-ManagedObjectContext.shared.deleteRepoData(id: "465005226") { res in
-    print(res)
-}
- */

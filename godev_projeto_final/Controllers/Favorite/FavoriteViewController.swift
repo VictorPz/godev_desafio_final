@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteViewController: UIViewController {
+final class FavoriteViewController: UIViewController {
     
     let favoriteTableView = CustomFavoriteTableView()
     private var infoRepo: [Repo] = []
@@ -15,6 +15,8 @@ class FavoriteViewController: UIViewController {
     private func delegates() {
         favoriteTableView.favoriteTableView.delegate = self
     }
+    
+    //MARK: - Life Cycle
     
     override func loadView() {
         self.view = self.favoriteTableView
@@ -30,6 +32,8 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
     }
     
+    //MARK: - Methods
+    
     private func setupNavBar() {
         let appearance = UINavigationBarAppearance()
 
@@ -41,9 +45,9 @@ class FavoriteViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
-    
-    
 }
+
+//MARK: - Extensions
 
 extension FavoriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -52,5 +56,4 @@ extension FavoriteViewController: UITableViewDelegate {
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
     }
-    
 }

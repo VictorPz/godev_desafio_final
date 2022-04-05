@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomIconImage: UIImageView {
+final class CustomIconImage: UIImageView {
     
     init() {
         super.init(frame: .zero)

@@ -9,40 +9,42 @@ import UIKit
 
 protocol TeamDetailViewDelegate: DetailItemStackViewDelegate {}
 
-class TeamDetailView: UIView {
+final class TeamDetailView: UIView {
     
-    lazy var verticalStack: CustomVerticalStackView = {
+    // MARK: - Components
+    
+    private lazy var verticalStack: CustomVerticalStackView = {
         let stack = CustomVerticalStackView()
         return stack
     }()
     
-    lazy var personImage: UIImageView = {
+    private lazy var personImage: CustomIconImage = {
         let image = CustomIconImage()
         image.contentMode = .scaleAspectFit
         return image
     }()
     
-    lazy var descriptionLabel: CustomBodyLabel = {
+    private lazy var descriptionLabel: CustomBodyLabel = {
         let description = CustomBodyLabel()
         return description
     }()
     
-    lazy var phoneHorizontalStack: DetailItemStackView = {
+    private lazy var phoneHorizontalStack: DetailItemStackView = {
         let stack = DetailItemStackView()
         return stack
     }()
     
-    lazy var emailHorizontalStack: DetailItemStackView = {
+    private lazy var emailHorizontalStack: DetailItemStackView = {
         let stack = DetailItemStackView()
         return stack
     }()
     
-    lazy var linkedinHorizontalStack: DetailItemStackView = {
+    private lazy var linkedinHorizontalStack: DetailItemStackView = {
         let stack = DetailItemStackView()
         return stack
     }()
     
-    lazy var githubHorizontalStack: DetailItemStackView = {
+    private lazy var githubHorizontalStack: DetailItemStackView = {
         let stack = DetailItemStackView()
         return stack
     }()
@@ -53,6 +55,8 @@ class TeamDetailView: UIView {
         }
     }
     
+    //MARK: - Inicialization
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -62,7 +66,7 @@ class TeamDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func stackDelegates() {
+    private func stackDelegates() {
         phoneHorizontalStack.delegate = delegate
         emailHorizontalStack.delegate = delegate
         linkedinHorizontalStack.delegate = delegate
@@ -86,6 +90,8 @@ class TeamDetailView: UIView {
         githubHorizontalStack.configure(icon: "globe", name: "Github", button: githubButtonInfo)
     }
 }
+
+//MARK: - Extensions
 
 extension TeamDetailView: ViewCodable {
     func buildHierarchy() {

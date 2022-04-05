@@ -8,10 +8,12 @@
 import UIKit
 import SafariServices
 
-class DetailGitRepositoryViewController: UIViewController {
+final class DetailGitRepositoryViewController: UIViewController {
     
     let detailGitRepository = DetailRepositoryView()
     var infoRepo: Repo?
+    
+    //MARK: - Life Cycle
     
     override func loadView() {
         super.loadView()
@@ -29,6 +31,8 @@ class DetailGitRepositoryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         configApiNavBar()
     }
+    
+    //MARK: - Methods
     
     private func initModeScreen() {
         view = detailGitRepository
@@ -107,6 +111,8 @@ class DetailGitRepositoryViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+//MARK: - Extensions
 
 extension DetailGitRepositoryViewController: DetailRepositoryViewDelegate {
     func detailButtonPressedGithub(_ value: String) {

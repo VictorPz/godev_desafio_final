@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CustomTeamTableView: UIView{
+final class CustomTeamTableView: UIView{
+    
+    //MARK: - Components
     
         lazy var tableview: CustomTableView = {
         let table = CustomTableView()
@@ -15,6 +17,8 @@ class CustomTeamTableView: UIView{
         table.dataSource = self
         return table
     }()
+    
+    //MARK: - Inicialization
     
     init() {
         super.init(frame: .zero)
@@ -25,6 +29,8 @@ class CustomTeamTableView: UIView{
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+//MARK: - Extensions
 
 extension CustomTeamTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

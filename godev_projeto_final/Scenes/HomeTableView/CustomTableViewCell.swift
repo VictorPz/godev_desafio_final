@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
     
     //MARK: - Components
     
@@ -30,8 +30,8 @@ class CustomTableViewCell: UITableViewCell {
         return description
     }()
     
-    private lazy var ownerImage: UIImageView = {
-        let ownerImage = UIImageView()
+    private lazy var ownerImage: CustomIconImage = {
+        let ownerImage = CustomIconImage()
         ownerImage.translatesAutoresizingMaskIntoConstraints = false
         return ownerImage
     }()
@@ -90,7 +90,7 @@ extension CustomTableViewCell: ViewCodable {
             
             verticalStack.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.Margin.defaultTop),
             verticalStack.leadingAnchor.constraint(equalTo: ownerImage.trailingAnchor, constant: Metrics.Margin.defaultLeading),
-            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom),
+            verticalStack.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom - 20),
             verticalStack.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing - 20)
         ])
     }

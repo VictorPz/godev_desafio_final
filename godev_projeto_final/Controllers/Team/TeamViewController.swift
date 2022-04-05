@@ -7,10 +7,12 @@
 
 import UIKit
 
-class TeamViewController: UIViewController {
+final class TeamViewController: UIViewController {
     
     let tableview = CustomTeamTableView()
     let teamInfo: [Team] = []
+    
+    //MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,6 +27,8 @@ class TeamViewController: UIViewController {
         tableview.tableview.delegate = self
     }
     
+    //MARK: - Methods
+    
     private func setupNavBar() {
         let appearance = UINavigationBarAppearance()
 
@@ -37,6 +41,8 @@ class TeamViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
 }
+
+//MARK: - Extensions
 
 extension TeamViewController: UITableViewDelegate {
     

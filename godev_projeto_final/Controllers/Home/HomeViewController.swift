@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate, CustomHomeTableViewDelegate {
+final class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate, CustomHomeTableViewDelegate {
+    
+    //MARK: - Alerts
     
     func showAlert(errorType: responseError) {
         var alert = UIAlertController()
@@ -35,6 +37,8 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     let tableView = CustomHomeTableView()
     let searchController = UISearchController(searchResultsController: nil)
     
+    //MARK: - Life Cycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupNavBar()
@@ -52,6 +56,8 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
     }
+    
+    //MARK: - Methods
     
     private func delegates() {
         tableView.tableView.delegate = self
@@ -99,6 +105,8 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     }
     
 }
+
+//MARK: - Extensions
 
 extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
