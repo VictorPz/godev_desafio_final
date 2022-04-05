@@ -40,7 +40,6 @@
 		9E2944C127F8D9B600194386 /* DetailItemStackViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2944C027F8D9B600194386 /* DetailItemStackViewDelegate.swift */; };
 		9EA13A7227F913800006D776 /* TeamDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA13A7127F913800006D776 /* TeamDetailView.swift */; };
 		9EDD3DAC27EF8AA3003E9E3A /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */; };
-		A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A842E5DA27EA5ACC0014E63B /* CoreData.framework */; };
 		A848378C27F55EEC00606FF3 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A848378B27F55EEC00606FF3 /* String+extensions.swift */; };
 		A8B5FAEF27FBC9D30072D454 /* CustomHomeTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FAEE27FBC9D30072D454 /* CustomHomeTableViewDelegate.swift */; };
 		A8B5FAF227FBE8B60072D454 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FAF127FBE8B60072D454 /* Colors.swift */; };
@@ -52,6 +51,7 @@
 		A8B5FB0027FC19480072D454 /* CustomSubTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FAFF27FC19480072D454 /* CustomSubTitleLabel.swift */; };
 		A8B5FB0427FC205D0072D454 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FB0327FC205D0072D454 /* CustomButton.swift */; };
 		A8B5FB0727FC28310072D454 /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B5FB0627FC28310072D454 /* CustomTableView.swift */; };
+		A8E595FC27FCFCD400013C0E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8E595FB27FCFCD400013C0E /* CoreData.framework */; };
 		A8FAEA1D27EE3C36003397F1 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +110,6 @@
 		9E2944C027F8D9B600194386 /* DetailItemStackViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemStackViewDelegate.swift; sourceTree = "<group>"; };
 		9EA13A7127F913800006D776 /* TeamDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailView.swift; sourceTree = "<group>"; };
 		9EDD3DAB27EF8AA3003E9E3A /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
-		A842E5DA27EA5ACC0014E63B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A848378B27F55EEC00606FF3 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		A8B5FAEE27FBC9D30072D454 /* CustomHomeTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHomeTableViewDelegate.swift; sourceTree = "<group>"; };
 		A8B5FAF127FBE8B60072D454 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		A8B5FAFF27FC19480072D454 /* CustomSubTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubTitleLabel.swift; sourceTree = "<group>"; };
 		A8B5FB0327FC205D0072D454 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A8B5FB0627FC28310072D454 /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		A8E595FB27FCFCD400013C0E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A8FAEA1C27EE3C36003397F1 /* ManagedObjectContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A842E5DB27EA5ACD0014E63B /* CoreData.framework in Frameworks */,
+				A8E595FC27FCFCD400013C0E /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +421,7 @@
 		A842E5D927EA5ACC0014E63B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A842E5DA27EA5ACC0014E63B /* CoreData.framework */,
+				A8E595FB27FCFCD400013C0E /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
