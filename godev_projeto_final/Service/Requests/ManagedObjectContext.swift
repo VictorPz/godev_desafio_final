@@ -37,7 +37,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
     
     // MARK: - Private Variables
     
-    private let entity = "Entity1"
+    private let entity = "Repositories"
     
     
     // MARK: - Public Properties
@@ -80,7 +80,6 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
                     
                     let repo = Repo(id: id, name: name, htmlURL: htmlUrl, description: description, watchersCount: watchersCount, createdAt: createdAt, owner: owner, license: license)
                     
-                    /*let repo = CoreDataRepo(id: id, name: name, image: image, details: details, author: author, viewsCount: viewsCount, createdAt: createdAt, license: license, url: url)*/
                     repoList.append(repo)
                 }
             }
