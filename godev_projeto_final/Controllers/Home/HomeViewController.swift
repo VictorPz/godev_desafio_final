@@ -7,7 +7,30 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate {
+class HomeViewController: UIViewController, UINavigationControllerDelegate, UISearchControllerDelegate, CustomHomeTableViewDelegate {
+    
+    func showAlert(errorType: responseError) {
+        
+        var alert = UIAlertController()
+        
+        switch errorType {
+        case .urlInvalid:
+            alert = UIAlertController(title: "URL Inválida", message: "Não foi possível indentificar a url fornecida.",
+                                      preferredStyle: .alert)
+        case .noProcessData:
+            alert = UIAlertController(title: "Processo Indisponível", message: "Não foi possível concluir a formatação de dados",
+                                      preferredStyle: .alert)
+        case .noDataAvailable:
+            alert = UIAlertController(title: "Dados Indisponíveis", message: "Não foi possível encontrar dados através da requisição.",
+                                      preferredStyle: .alert)
+        }
+        
+        let okButton = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(okButton)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     private var orderList: Bool = true
     private var infoRepo: [Repo] = []
@@ -17,6 +40,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     
     override func loadView() {
         self.view = self.tableView
+        tableView.delegate = self
         delegates()
         tableView.dataGit()
     }
@@ -24,7 +48,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
         navigationControllerSetup()
         let repo = ManagedObjectContext.shared.getRepoData()
@@ -66,7 +90,7 @@ class HomeViewController: UIViewController, UINavigationControllerDelegate, UISe
     //Função para chamar a ordenação da lista
     @objc private func orderByDescAndAsc() {
         tableView.orderBy()
-
+        
     }
     
 }
@@ -92,7 +116,7 @@ extension HomeViewController: UITableViewDelegate {
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         tableView.dataGit()
     }

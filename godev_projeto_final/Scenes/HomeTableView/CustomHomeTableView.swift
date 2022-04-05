@@ -13,12 +13,16 @@ enum StateEnum {
 }
 
 class CustomHomeTableView: UIView {
-
+    
     public var gitHubRepo: [Repo] = [] {
         didSet {
             self.verifyListCount()
         }
     }
+    
+    var viewController: HomeViewController?
+    
+    var delegate: CustomHomeTableViewDelegate?
     
     var state: StateEnum = .normal
     
@@ -58,7 +62,7 @@ class CustomHomeTableView: UIView {
         
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -86,9 +90,11 @@ extension CustomHomeTableView: UITableViewDataSource {
                 } else {
                     self.onSuccessRequest()
                 }
-            case .failure(_):
-                self.gitHubRepo = []
-                self.onErrorRequest()
+            case .failure(let error):
+                self.setErrorState()
+                DispatchQueue.main.async {
+                    self.delegate?.showAlert(errorType: error)
+                }
             }
             self.state = .normal
         }
@@ -97,6 +103,11 @@ extension CustomHomeTableView: UITableViewDataSource {
     func orderBy() {
         self.gitHubRepo.reverse()
         self.tableView.reloadData()
+    }
+    
+    private func setErrorState() {
+        self.gitHubRepo = []
+        self.onErrorRequest()
     }
     
     private func onSuccessRequest() {
