@@ -1,27 +1,29 @@
 //
-//  CustomLabel.swift
+//  CustomVerticalStack.swift
 //  godev_projeto_final
 //
-//  Created by Idwall Go Dev 008 on 27/03/22.
+//  Created by SP11793 on 05/04/22.
 //
 
 import UIKit
 
-class CustomLabel: UILabel {
-    
+class CustomVerticalStackView: UIStackView {
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configLabel()
+        configStack()
     }
     
-    private func configLabel() {
+    private func configStack() {
         translatesAutoresizingMaskIntoConstraints = false
-        textColor = .label
-        numberOfLines = 0
+        alignment = .fill
+        contentMode = .top
+        spacing = 8
+        axis = .vertical
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }

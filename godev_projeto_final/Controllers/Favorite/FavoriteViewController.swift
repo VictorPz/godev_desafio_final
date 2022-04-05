@@ -24,11 +24,25 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoriteTableView.initCoreDataRepos()
+        setupNavBar()
     }
     
     override func viewDidLoad() {
-        view.backgroundColor = .blue
     }
+    
+    private func setupNavBar() {
+        let appearance = UINavigationBarAppearance()
+
+        appearance.backgroundColor = .defaultBackgroundColor
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.defaultNavControllerTitleColor]
+
+        navigationController?.navigationBar.tintColor = .defaultTintColor
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.compactAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    
 }
 
 extension FavoriteViewController: UITableViewDelegate {
@@ -37,7 +51,6 @@ extension FavoriteViewController: UITableViewDelegate {
         let detailGitRepositoryViewController = DetailGitRepositoryViewController()
         detailGitRepositoryViewController.infoRepo = infoRepo[indexPath.row]
         navigationController?.pushViewController(detailGitRepositoryViewController, animated: true)
-        //navigationController?.pushViewController(FavoriteDetail(), animated: true)
     }
     
 }

@@ -18,23 +18,16 @@ class CustomFavoriteTableView: UIView {
         }
     }
     
-    lazy var favoriteTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+    lazy var favoriteTableView: CustomTableView = {
+        let tableView = CustomTableView()
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
     }()
     
-    private lazy var emptyLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var emptyLabel: CustomWarningLabel = {
+        let label = CustomWarningLabel()
         label.text = "Você não possui repositórios favoritados ainda!"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .systemGray
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.isHidden = true
         return label
     }()
     
@@ -43,7 +36,6 @@ class CustomFavoriteTableView: UIView {
         favoriteTableView.reloadData()
         favoriteTableView.showsVerticalScrollIndicator = false
         
-        favoriteTableView.separatorColor = UIColor.clear
         setupView()
         initCoreDataRepos()
     }
@@ -95,8 +87,8 @@ extension CustomFavoriteTableView: ViewCodable {
         
         NSLayoutConstraint.activate([
             emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Metrics.Margin.defaultTrailing),
+            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.Margin.defaultLeading)
         ])
     }
 }

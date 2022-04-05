@@ -13,147 +13,112 @@ protocol DetailRepositoryViewDelegate {
 
 class DetailRepositoryView: UIView {
     
-    lazy var ownerImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "person")
+    lazy var ownerImage: CustomIconImage = {
+        let image = CustomIconImage()
         return image
     }()
     
-    lazy var verticalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.alignment = .fill
-        stack.contentMode = .top
-        stack.spacing = 8
-        stack.axis = .vertical
+    lazy var verticalStack: CustomVerticalStackView = {
+        let stack = CustomVerticalStackView(frame: .zero)
         return stack
     }()
     
-    lazy var descriptionLabel: UILabel = {
-        let description = UILabel()
-        description.translatesAutoresizingMaskIntoConstraints = false
-        description.textColor = UIColor.black
-        description.numberOfLines = 0
-        description.text = "A curated list of awesome iOS ecosystem, including Objective-C and Swift Projects"
-        description.font = UIFont.systemFont(ofSize: 17, weight: .light)
-        description.textAlignment = .justified
+    lazy var descriptionLabel: CustomBodyLabel = {
+        let description = CustomBodyLabel()
         return description
     }()
     
-    lazy var authorHorizontalStack: UIStackView = {
+    lazy var authorHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconImageView: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
+    lazy var iconImageView: CustomIconImage = {
+        let icon = CustomIconImage()
         icon.image = UIImage(systemName: "person.crop.square")
-        icon.tintColor = .label
         return icon
     }()
     
-    lazy var authorLabel: UILabel = {
-        let label = CustomLabel()
+    lazy var authorLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         label.text = "Autor:"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
-    lazy var authorNameLabel: UILabel = {
-        let label = CustomLabel()
-        label.text = "Rafael Rocha dos Santos"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    lazy var authorNameLabel: CustomSubTitleLabel = {
+        let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var countObserversContaineHorizontalStack: UIStackView = {
+    lazy var countObserversContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconEyeImage: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
+    lazy var iconEyeImage: CustomIconImage = {
+        let icon = CustomIconImage()
         icon.image = UIImage(systemName: "eye")
-        icon.tintColor = .label
         return icon
     }()
     
-    lazy var countObserversLabel: UILabel = {
-        let label = CustomLabel()
+    lazy var countObserversLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         label.text = "Contatem de observadores:"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
-    lazy var countInfoLabel: UILabel = {
-        let label = CustomLabel()
-        label.text = "00000"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    lazy var countInfoLabel: CustomSubTitleLabel = {
+        let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var dataCreationContaineHorizontalStack: UIStackView = {
+    lazy var dataCreationContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconClockImage: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
+    lazy var iconClockImage: CustomIconImage = {
+        let icon = CustomIconImage()
         icon.image = UIImage(systemName: "alarm.fill")
-        icon.tintColor = .label
         return icon
     }()
     
-    lazy var dataLabel: UILabel = {
-        let label = CustomLabel()
+    lazy var dataLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         label.text = "Data de criação:"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
-    lazy var dataInfoLabel: UILabel = {
-        let label = CustomLabel()
-        label.text = "00/00/0000"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    lazy var dataInfoLabel: CustomSubTitleLabel = {
+        let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var licenceContaineHorizontalStack: UIStackView = {
+    lazy var licenceContaineHorizontalStack: CustomHorizontalStackView = {
         let stack = CustomHorizontalStackView()
         return stack
     }()
     
-    lazy var iconGlobeImage: UIImageView = {
-        let icon = UIImageView()
-        icon.translatesAutoresizingMaskIntoConstraints = false
+    lazy var iconGlobeImage: CustomIconImage = {
+        let icon = CustomIconImage()
         icon.image = UIImage(systemName: "globe")
-        icon.tintColor = .label
         return icon
     }()
     
-    lazy var licenceLabel: UILabel = {
-        let label = CustomLabel()
+    lazy var licenceLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         label.text = "Licença:"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         return label
     }()
     
-    lazy var licenceInfoLabel: UILabel = {
-        let label = CustomLabel()
-        label.text = "MIT License"
-        label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+    lazy var licenceInfoLabel: CustomSubTitleLabel = {
+        let label = CustomSubTitleLabel()
         return label
     }()
     
-    lazy var linkRepoButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+    lazy var linkRepoButton: CustomButton = {
+        let button = CustomButton()
         button.setTitle("Link do Repositório", for: .normal)
-        button.setTitleColor(UIColor.label, for: .normal)
         button.addTarget(self, action: #selector(callRepo), for: .touchUpInside)
         return button
     }()
@@ -226,66 +191,60 @@ extension DetailRepositoryView: ViewCodable {
     }
 
     func setupConstraints() {
-        //Constraint da imagem
         NSLayoutConstraint.activate([
-            ownerImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            ownerImage.heightAnchor.constraint(equalToConstant: 150),
-            ownerImage.widthAnchor.constraint(equalToConstant: 150),
+            ownerImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: Metrics.Margin.defaultTop),
+            ownerImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightImage),
+            ownerImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthImage),
             ownerImage.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
         
-        //Constraint da vertical stack
         NSLayoutConstraint.activate([
-            verticalStack.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: 23),
-            verticalStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            verticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            verticalStack.topAnchor.constraint(equalTo: ownerImage.bottomAnchor, constant: Metrics.Margin.defaultTop),
+            verticalStack.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
+            verticalStack.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing),
         ])
         
-        //icon Image Person
         NSLayoutConstraint.activate([
-            iconImageView.widthAnchor.constraint(equalToConstant: 36),
-            iconImageView.heightAnchor.constraint(equalToConstant: 36),
+            iconImageView.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthIcon),
+            iconImageView.heightAnchor.constraint(equalToConstant:  Metrics.Height.defaultHeightIcon),
         ])
         
-        //author label
         NSLayoutConstraint.activate([
-            authorLabel.widthAnchor.constraint(equalToConstant: 52),
+            authorLabel.widthAnchor.constraint(equalToConstant: 50),
         ])
         
-        //icon Image Eye
         NSLayoutConstraint.activate([
-            iconEyeImage.widthAnchor.constraint(equalToConstant: 36),
-            iconEyeImage.heightAnchor.constraint(equalToConstant: 36),
+            iconEyeImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthIcon),
+            iconEyeImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightIcon),
         ])
         
-        //countObserverLabel
         NSLayoutConstraint.activate([
-            countObserversLabel.widthAnchor.constraint(equalToConstant: 230),
+            countObserversLabel.widthAnchor.constraint(equalToConstant: 220),
         ])
         
-        //icon Image clock
         NSLayoutConstraint.activate([
-            iconClockImage.widthAnchor.constraint(equalToConstant: 36),
-            iconClockImage.heightAnchor.constraint(equalToConstant: 36),
+            iconClockImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthIcon),
+            iconClockImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightIcon),
         ])
         
-        //icon Image Globe
         NSLayoutConstraint.activate([
-            iconGlobeImage.widthAnchor.constraint(equalToConstant: 36),
-            iconGlobeImage.heightAnchor.constraint(equalToConstant: 36),
+            dataLabel.widthAnchor.constraint(equalToConstant: 140),
         ])
         
-        //licenceLabel
         NSLayoutConstraint.activate([
-            licenceLabel.widthAnchor.constraint(equalToConstant: 70),
+            iconGlobeImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthIcon),
+            iconGlobeImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightIcon),
         ])
         
-        //Button link
         NSLayoutConstraint.activate([
-            linkRepoButton.topAnchor.constraint(equalTo: verticalStack.bottomAnchor, constant: 50),
-            linkRepoButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            linkRepoButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            linkRepoButton.heightAnchor.constraint(equalToConstant: 45)
+            licenceLabel.widthAnchor.constraint(equalToConstant: 65),
+        ])
+        
+        NSLayoutConstraint.activate([
+            linkRepoButton.topAnchor.constraint(equalTo: verticalStack.bottomAnchor, constant: Metrics.Margin.defaultTop + 14),
+            linkRepoButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
+            linkRepoButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing),
+            linkRepoButton.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightButton)
         ])
     }
 

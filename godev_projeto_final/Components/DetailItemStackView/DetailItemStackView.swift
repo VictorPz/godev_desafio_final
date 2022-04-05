@@ -15,21 +15,20 @@ struct ButtonInfo {
 
 class DetailItemStackView: CustomHorizontalStackView {
     
-    lazy var iconImage: UIImageView = {
+    lazy var iconImage: CustomIconImage = {
         let icon = CustomIconImage()
         return icon
     }()
     
-    lazy var nameLabel: UILabel = {
-        let label = CustomLabel()
-        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+    lazy var nameLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         return label
     }()
     
     lazy var infoButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.label, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        button.setTitleColor(.defaultSubTitleLabelColor, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -80,9 +79,9 @@ class DetailItemStackView: CustomHorizontalStackView {
         addArrangedSubviews(iconImage, nameLabel, infoButton)
         
         NSLayoutConstraint.activate([
-            iconImage.widthAnchor.constraint(equalToConstant: 36),
-            iconImage.heightAnchor.constraint(equalToConstant: 36),
-            nameLabel.widthAnchor.constraint(equalToConstant: 78),
+            iconImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthIcon),
+            iconImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightIcon),
+            nameLabel.widthAnchor.constraint(equalToConstant: 78)
         ])
     }
 }

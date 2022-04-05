@@ -50,7 +50,7 @@ class DetailGitRepositoryViewController: UIViewController {
     private func configApiNavBar() {
         if isFavorite() {
             let favorite = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(removeApiFavorite))
-            favorite.tintColor = .red
+            favorite.tintColor = .defaultTintColor
             navigationItem.rightBarButtonItem = favorite
         } else {
             let favorite = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addApiFavorite))
@@ -118,6 +118,8 @@ extension DetailGitRepositoryViewController: DetailRepositoryViewDelegate {
         let safariViewController = SFSafariViewController(url: url, configuration: config)
         safariViewController.delegate = self
         safariViewController.dismissButtonStyle = .close
+        safariViewController.preferredBarTintColor = .defaultBackgroundColor
+        safariViewController.preferredControlTintColor = .defaultTintColor
         
         present(safariViewController, animated: true)
     }

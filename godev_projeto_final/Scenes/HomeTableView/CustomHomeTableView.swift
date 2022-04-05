@@ -26,9 +26,8 @@ class CustomHomeTableView: UIView {
     
     var state: StateEnum = .normal
     
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+    lazy var tableView: CustomTableView = {
+        let tableView = CustomTableView()
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
@@ -41,15 +40,9 @@ class CustomHomeTableView: UIView {
         return view
     }()
     
-    private lazy var emptyLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var emptyLabel: CustomWarningLabel = {
+        let label = CustomWarningLabel()
         label.text = "Nenhum repositório encontrado!"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-        label.textColor = .systemGray
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.isHidden = true
         return label
     }()
     
@@ -57,7 +50,6 @@ class CustomHomeTableView: UIView {
         super.init(frame: .zero)
         tableView.reloadData()
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorColor = UIColor.clear
         setupView()
         
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
@@ -143,7 +135,7 @@ extension CustomHomeTableView: UITableViewDataSource {
 
 extension CustomHomeTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 93
+        return Metrics.Height.defaultHeightForRowAt
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -183,8 +175,8 @@ extension CustomHomeTableView: ViewCodable {
         
         NSLayoutConstraint.activate([
             emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
+            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: Metrics.Margin.defaultTrailing),
+            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.Margin.defaultLeading)
         ])
     }
 }

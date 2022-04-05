@@ -16,34 +16,22 @@ class CustomTableViewCellTeam: UITableViewCell {
     private lazy var photoImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
-    private lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.alignment = .fill
-        stack.contentMode = .top
-        stack.spacing = 20
-        stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var stackView: CustomVerticalStackView = {
+        let stack = CustomVerticalStackView(frame: .zero)
         return stack
     }()
     
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 17)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var nameLabel: CustomTitleLabel = {
+        let label = CustomTitleLabel()
         return label
     }()
     
-    private lazy var ocupationLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor.black
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private lazy var ocupationLabel: CustomBodyLabel = {
+        let label = CustomBodyLabel()
         return label
     }()
     
@@ -51,7 +39,7 @@ class CustomTableViewCellTeam: UITableViewCell {
     
     func updateView(team: Team){
         photoImage.image = UIImage(named: team.image)
-        photoImage.layer.cornerRadius = 42.5
+        photoImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
         photoImage.layer.masksToBounds = true
         nameLabel.text = team.name
         ocupationLabel.text = team.ocupation
@@ -83,17 +71,16 @@ extension CustomTableViewCellTeam: ViewCodable{
     }
     
     func setupConstraints() {
-        photoImage.layer.cornerRadius = photoImage.layer.frame.width / 2
         NSLayoutConstraint.activate([
-            photoImage.heightAnchor.constraint(equalToConstant: 85),
-            photoImage.widthAnchor.constraint(equalToConstant: 85),
-            photoImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            photoImage.heightAnchor.constraint(equalToConstant: Metrics.Height.defaultHeightCellImage),
+            photoImage.widthAnchor.constraint(equalToConstant: Metrics.Width.defaultWidthCellImage),
+            photoImage.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: Metrics.Margin.defaultLeading),
             photoImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
-            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
-            stackView.leadingAnchor.constraint(equalTo: photoImage.trailingAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -35)
+            stackView.topAnchor.constraint(equalTo: self.topAnchor, constant: Metrics.Margin.defaultTop),
+            stackView.leadingAnchor.constraint(equalTo: photoImage.trailingAnchor, constant: Metrics.Margin.defaultLeading),
+            stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: Metrics.Margin.defaultBottom),
+            stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: Metrics.Margin.defaultTrailing - 20)
         ])
     }
 }

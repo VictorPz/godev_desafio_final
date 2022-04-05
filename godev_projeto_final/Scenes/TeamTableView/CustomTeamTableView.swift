@@ -9,15 +9,10 @@ import UIKit
 
 class CustomTeamTableView: UIView{
     
-        lazy var tableview: UITableView = {
-        let table = UITableView()
-        
+        lazy var tableview: CustomTableView = {
+        let table = CustomTableView()
         table.register(CustomTableViewCellTeam.self, forCellReuseIdentifier: CustomTableViewCellTeam.identifier)
         table.dataSource = self
-        table.showsVerticalScrollIndicator = false
-        table.separatorColor = UIColor.clear
-        
-        table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
@@ -28,6 +23,12 @@ class CustomTeamTableView: UIView{
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CustomTeamTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Metrics.Height.defaultHeightForRowAt
     }
 }
 
