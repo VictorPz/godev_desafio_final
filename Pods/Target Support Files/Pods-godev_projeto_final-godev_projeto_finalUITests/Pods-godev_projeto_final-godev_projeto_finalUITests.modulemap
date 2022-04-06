@@ -1,0 +1,6 @@
+module Pods_godev_projeto_final_godev_projeto_finalUITests {
+  umbrella header "Pods-godev_projeto_final-godev_projeto_finalUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
