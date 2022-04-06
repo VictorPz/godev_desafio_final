@@ -18,6 +18,7 @@ final class CustomSubTitleLabel: UILabel {
     private func configLabel() {
         translatesAutoresizingMaskIntoConstraints = false
         font = UIFont.systemFont(ofSize: 15)
+        numberOfLines = 0
         textColor = .defaultSubTitleLabelColor
         textAlignment = .left
     }

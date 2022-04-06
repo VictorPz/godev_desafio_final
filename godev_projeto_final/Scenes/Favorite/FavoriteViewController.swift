@@ -44,6 +44,7 @@ final class FavoriteViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
     }
 }
 

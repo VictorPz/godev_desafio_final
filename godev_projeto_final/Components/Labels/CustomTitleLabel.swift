@@ -17,6 +17,7 @@ final class CustomTitleLabel: UILabel {
     private func configLabel() {        
         translatesAutoresizingMaskIntoConstraints = false
         font = UIFont.systemFont(ofSize: 17)
+        numberOfLines = 0
         textColor = .defaultTitleLabelColor
         textAlignment = .left
     }

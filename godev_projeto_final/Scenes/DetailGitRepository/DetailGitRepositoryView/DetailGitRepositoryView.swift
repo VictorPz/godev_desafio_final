@@ -235,7 +235,7 @@ extension DetailRepositoryView: ViewCodable {
         ])
         
         NSLayoutConstraint.activate([
-            dataLabel.widthAnchor.constraint(equalToConstant: 140),
+            //dataLabel.widthAnchor.constraint(equalToConstant: 140),
         ])
         
         NSLayoutConstraint.activate([
