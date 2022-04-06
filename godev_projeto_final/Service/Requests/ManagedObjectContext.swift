@@ -9,11 +9,9 @@ import Foundation
 import UIKit
 import CoreData
 
-
 // MARK: - Typealias
 
 typealias onCompletionHandler = (String) -> Void
-
 
 // MARK: - Protocols
 
@@ -29,16 +27,13 @@ protocol managedDeleteProtocol {
     func deleteRepoData(id: Int, onCompletionHandler: onCompletionHandler)
 }
 
-
 // MARK: - Class
 
 class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDeleteProtocol{
     
-    
     // MARK: - Private Variables
     
     private let entity = "Repositories"
-    
     
     // MARK: - Public Properties
     
@@ -46,8 +41,7 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
         let instance = ManagedObjectContext()
         return instance
     }()
-    
-    
+        
     // MARK: - Public Methods
     
     func getContext() -> NSManagedObjectContext {
@@ -143,5 +137,4 @@ class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDe
             print("Fatch failed \(error.localizedDescription)")
         }
     }
-    
 }

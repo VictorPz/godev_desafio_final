@@ -22,7 +22,6 @@ final class DetailTeamViewController: UIViewController, SFSafariViewControllerDe
     override func viewDidLoad() {
         detailTeamView.delegate = self
     }
-    
 }
 
 //MARK: - Extensions

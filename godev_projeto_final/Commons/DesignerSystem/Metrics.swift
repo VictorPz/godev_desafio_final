@@ -22,8 +22,6 @@ struct Metrics {
         
         /// Represents the default bottom constraints  in application
         static let defaultBottom: CGFloat = -16
-        
-        
     }
     
     struct Height {
@@ -42,8 +40,6 @@ struct Metrics {
         
         /// Represents the default height of all buttons in application
         static let defaultHeightButton: CGFloat = 45
-        
-        
     }
     
     struct Width {

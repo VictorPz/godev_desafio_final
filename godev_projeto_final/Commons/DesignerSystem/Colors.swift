@@ -124,6 +124,4 @@ extension UIColor {
     
     /// Represents the default color of all button backgrounds in application
     static let defaultButtonBackgroundColor = UIColor.systemBackground
-    
-    
 }

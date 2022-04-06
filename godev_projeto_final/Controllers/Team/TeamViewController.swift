@@ -24,7 +24,7 @@ final class TeamViewController: UIViewController {
     
     override func loadView() {
         self.view = self.tableview
-        tableview.tableview.delegate = self
+        tableview.tableView.delegate = self
     }
     
     //MARK: - Methods
@@ -39,6 +39,7 @@ final class TeamViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationController?.navigationBar.topItem?.backButtonTitle = "Voltar"
     }
 }
 

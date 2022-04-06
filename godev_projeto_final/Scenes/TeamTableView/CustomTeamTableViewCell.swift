@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCellTeam.swift
+//  CustomTeamTableViewCell.swift
 //  godev_projeto_final
 //
 //  Created by Aloc SP11704 on 27/03/22.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class CustomTableViewCellTeam: UITableViewCell {
+final class CustomTeamTableViewCell: UITableViewCell {
     
-    static let identifier = "CustomTableViewCellTeam"
+    static let identifier = "CustomTeamTableViewCell"
     
     // MARK: - Components
     
@@ -57,7 +57,7 @@ final class CustomTableViewCellTeam: UITableViewCell {
 
 //MARK: - Extensions
 
-extension CustomTableViewCellTeam: ViewCodable{
+extension CustomTeamTableViewCell: ViewCodable{
     
     func buildHierarchy() {
         addSubview(photoImage)
