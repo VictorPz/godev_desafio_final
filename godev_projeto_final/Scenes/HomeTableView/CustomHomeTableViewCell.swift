@@ -1,5 +1,5 @@
 //
-//  CustomTableViewCell.swift
+//  CustomHomeTableViewCell.swift
 //  godev_projeto_final
 //
 //  Created by Victor Pizetta on 23/03/22.
@@ -7,23 +7,21 @@
 
 import UIKit
 
-final class CustomTableViewCell: UITableViewCell {
+final class CustomHomeTableViewCell: UITableViewCell {
     
     //MARK: - Components
     
-    static let identifier = "CustomTableViewCell"
+    static let identifier = "CustomHomeTableViewCell"
     
     private lazy var verticalStack: CustomVerticalStackView = {
         let stack  = CustomVerticalStackView(frame: .zero)
         return stack
     }()
-        
     
     private lazy var repositoryTitle: CustomTitleLabel = {
         let label = CustomTitleLabel()
         return label
     }()
-
 
     private lazy var repositoryDescription: CustomBodyLabel = {
         let description = CustomBodyLabel()
@@ -35,7 +33,6 @@ final class CustomTableViewCell: UITableViewCell {
         ownerImage.translatesAutoresizingMaskIntoConstraints = false
         return ownerImage
     }()
-    
     
     //MARK: - Inicialization
     
@@ -69,7 +66,7 @@ final class CustomTableViewCell: UITableViewCell {
 
 //MARK: - Extensions
 
-extension CustomTableViewCell: ViewCodable {
+extension CustomHomeTableViewCell: ViewCodable {
     
     func buildHierarchy() {
         addSubview(ownerImage)
@@ -78,7 +75,6 @@ extension CustomTableViewCell: ViewCodable {
         verticalStack.addArrangedSubview(repositoryDescription)
     
         addSubview(verticalStack)
-        
     }
     
     func setupConstraints() {

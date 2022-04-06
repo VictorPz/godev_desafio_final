@@ -30,7 +30,7 @@ final class CustomHomeTableView: UIView {
     
     lazy var tableView: CustomTableView = {
         let tableView = CustomTableView()
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(CustomHomeTableViewCell.self, forCellReuseIdentifier: CustomHomeTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -56,7 +56,7 @@ final class CustomHomeTableView: UIView {
         tableView.showsVerticalScrollIndicator = false
         setupView()
         
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(CustomHomeTableViewCell.self, forCellReuseIdentifier: CustomHomeTableViewCell.identifier)
     }
     
     required init?(coder: NSCoder) {
@@ -149,7 +149,7 @@ extension CustomHomeTableView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as? CustomTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomHomeTableViewCell.identifier) as? CustomHomeTableViewCell else { return UITableViewCell() }
         
         let repo = gitHubRepo[indexPath.row]
         cell.updateHomeView(repo: repo)

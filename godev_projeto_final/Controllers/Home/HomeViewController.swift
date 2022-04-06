@@ -83,7 +83,6 @@ final class HomeViewController: UIViewController, UINavigationControllerDelegate
         searchController.searchBar.searchTextField.tintColor = .defaultTintColor
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.up.arrow.down"), style: .plain, target: self, action: #selector(orderByDescAndAsc))
-        
     }
     
     private func setupNavBar() {
@@ -103,7 +102,6 @@ final class HomeViewController: UIViewController, UINavigationControllerDelegate
         tableView.orderBy()
         
     }
-    
 }
 
 //MARK: - Extensions
@@ -118,7 +116,6 @@ extension HomeViewController: UISearchResultsUpdating, UISearchBarDelegate {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        
     }
 }
 

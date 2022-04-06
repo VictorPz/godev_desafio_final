@@ -22,7 +22,7 @@ final class CustomFavoriteTableView: UIView {
     
     lazy var favoriteTableView: CustomTableView = {
         let tableView = CustomTableView()
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(CustomHomeTableViewCell.self, forCellReuseIdentifier: CustomHomeTableViewCell.identifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -55,7 +55,6 @@ final class CustomFavoriteTableView: UIView {
             emptyLabel.isHidden = coreDataRepos.count != 0
         }
     }
-    
 }
 
 //MARK: - Extensions
@@ -66,7 +65,7 @@ extension CustomFavoriteTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomHomeTableViewCell.identifier, for: indexPath) as? CustomHomeTableViewCell else {return UITableViewCell()}
         
         let repo = coreDataRepos[indexPath.row]
         cell.updateFavoriteView(repoTitle: repo.name, repoDescription: repo.description ?? "No Description", image: UIImage(data: repo.owner.avatarImage!)!)

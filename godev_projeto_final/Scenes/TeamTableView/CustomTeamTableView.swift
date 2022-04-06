@@ -11,9 +11,9 @@ final class CustomTeamTableView: UIView{
     
     //MARK: - Components
     
-        lazy var tableview: CustomTableView = {
+        lazy var tableView: CustomTableView = {
         let table = CustomTableView()
-        table.register(CustomTableViewCellTeam.self, forCellReuseIdentifier: CustomTableViewCellTeam.identifier)
+        table.register(CustomTeamTableViewCell.self, forCellReuseIdentifier: CustomTeamTableViewCell.identifier)
         table.dataSource = self
         return table
     }()
@@ -45,7 +45,7 @@ extension CustomTeamTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCellTeam.identifier, for: indexPath) as? CustomTableViewCellTeam else { return UITableViewCell() }
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: CustomTeamTableViewCell.identifier, for: indexPath) as? CustomTeamTableViewCell else { return UITableViewCell() }
         
         let listTeam = Team.populateData()
         let team = listTeam[indexPath.row]
@@ -58,15 +58,15 @@ extension CustomTeamTableView: UITableViewDataSource {
 extension CustomTeamTableView: ViewCodable {
     
     func buildHierarchy() {
-        addSubview(tableview)
+        addSubview(tableView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate ([
-            tableview.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableview.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableview.topAnchor.constraint(equalTo: topAnchor),
-            tableview.bottomAnchor.constraint(equalTo: bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 }
