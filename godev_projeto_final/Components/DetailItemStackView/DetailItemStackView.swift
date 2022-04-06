@@ -25,11 +25,8 @@ class DetailItemStackView: CustomHorizontalStackView {
         return label
     }()
     
-    lazy var infoButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.defaultSubTitleLabelColor, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    lazy var infoButton: CustomButton = {
+        let button = CustomButton()
         return button
     }()
     
