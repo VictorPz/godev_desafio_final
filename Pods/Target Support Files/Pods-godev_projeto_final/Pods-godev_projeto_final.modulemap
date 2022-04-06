@@ -1,0 +1,6 @@
+module Pods_godev_projeto_final {
+  umbrella header "Pods-godev_projeto_final-umbrella.h"
+
+  export *
+  module * { export * }
+}

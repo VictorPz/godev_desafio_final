@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CustomHomeTableViewCell: UITableViewCell {
     
@@ -52,7 +53,8 @@ final class CustomHomeTableViewCell: UITableViewCell {
         
         self.ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
         self.ownerImage.layer.masksToBounds = true
-        ownerImage.loadImage(from: repo.owner.avatarUrl)
+        let Imageurl = URL(string: repo.owner.avatarUrl)
+        ownerImage.kf.setImage(with: Imageurl)
     }
     
     func updateFavoriteView(repoTitle: String, repoDescription: String, image: UIImage) {

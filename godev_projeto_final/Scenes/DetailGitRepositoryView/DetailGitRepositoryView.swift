@@ -143,7 +143,8 @@ class DetailRepositoryView: UIView {
     }
     
     func setupInfoRepo(infoRepo: Repo) {
-        ownerImage.loadImage(from: infoRepo.owner.avatarUrl)
+        let url = URL(string: infoRepo.owner.avatarUrl)
+        ownerImage.kf.setImage(with: url)
         descriptionLabel.text = infoRepo.description
         authorNameLabel.text = infoRepo.owner.login
         countInfoLabel.text = String(infoRepo.watchersCount)
