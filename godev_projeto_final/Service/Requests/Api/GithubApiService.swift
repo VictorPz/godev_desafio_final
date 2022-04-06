@@ -7,18 +7,7 @@
 
 import UIKit
 
-enum responseError: Error {
-    case urlInvalid
-    case noProcessData
-    case noDataAvailable
-}
-
-protocol ServiceProtocol {
-
-    func fetchList(for language: String, orderBy: Bool, _ completion: @escaping (Result<[Repo], responseError>) -> Void)
-}
-
-class githubApiService: ServiceProtocol {
+class githubApiService: GithubServiceProtocol {
     
     static var shared: githubApiService {
         let apiInstance = githubApiService()

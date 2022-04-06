@@ -11,7 +11,7 @@ import MessageUI
 
 final class DetailTeamViewController: UIViewController, SFSafariViewControllerDelegate {
     
-    let detailTeamView = TeamDetailView()
+    let detailTeamView = DetailTeamView()
     
     //MARK: - Life Cycle
     

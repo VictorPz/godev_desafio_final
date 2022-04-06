@@ -13,23 +13,9 @@ import CoreData
 
 typealias onCompletionHandler = (String) -> Void
 
-// MARK: - Protocols
-
-protocol managedReadProtocol {
-    func getRepoData() -> [Repo]
-}
-
-protocol managedSaveProtocol {
-    func saveRepoData(repo: Repo, onCompletionHandler: onCompletionHandler)
-}
-
-protocol managedDeleteProtocol {
-    func deleteRepoData(id: Int, onCompletionHandler: onCompletionHandler)
-}
-
 // MARK: - Class
 
-class ManagedObjectContext:  managedReadProtocol, managedSaveProtocol, managedDeleteProtocol{
+class ManagedObjectContext:  ManagedReadProtocol, ManagedSaveProtocol, ManagedDeleteProtocol{
     
     // MARK: - Private Variables
     
