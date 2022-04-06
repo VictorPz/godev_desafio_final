@@ -158,7 +158,7 @@ class DetailRepositoryView: UIView {
             let owner = Owner(login: infoRepo.owner.login, avatarUrl: infoRepo.owner.avatarUrl, avatarImage: image)
             let license = License(name: infoRepo.license?.name ?? "No License")
             
-            let repo = Repo(id: infoRepo.id, name: infoRepo.name, htmlURL: infoRepo.htmlURL, description: infoRepo.description, watchersCount: infoRepo.watchersCount, createdAt: infoRepo.createdAt, owner: owner, license: license)
+            let repo = Repo(id: infoRepo.id, name: infoRepo.name, htmlURL: infoRepo.htmlURL, description: infoRepo.description ?? "No Description", watchersCount: infoRepo.watchersCount, createdAt: infoRepo.createdAt, owner: owner, license: license)
 
             ManagedObjectContext.shared.saveRepoData(repo: repo) { res in
                 print(res)
