@@ -49,7 +49,7 @@ struct Team {
                  github: "https://github.com/VictorPz",
                  description: "Sou um amante de desafios, tecnologia e games. Curto muito trabalhar em equipe e estar inserido em grupos com diversidade de opiniões, ideias e conhecimentos! Acredito que só assim posso estar sempre aprendendo coisas novas e transmitindo o que conheço. Sou formado em Direito e já estou ansioso pela próxima graduação dentro da área de tecnologia."),
             
-            Team(name: "Jonas William de Lima Santos",
+            Team(name: "Jonas Santos",
                  ocupation: "Desenvolvedor Back End - Java na MV",
                  image: "jonaswilliam",
                  fone: "(81)988902707",
@@ -58,7 +58,7 @@ struct Team {
                  github: "https://github.com/JonasWilliam",
                  description: "Eu tenho 22 anos, moro em Recife - PE, sou um apaixonado por jogos eletrônicos, séries, filmes, também amo jogar e assistir basquete, futebol e outros esportes. Gosto de passar meu tempo livre conhecendo novos lugares, praças, lanchonetes, cinemas, museus, eu amo explorar todos os cantos de Recife."),
             
-            Team(name: "Luis Gustavo de A. Kokumai",
+            Team(name: "Luis Kokumai",
                  ocupation: "Técnico Mecatrônico com foco em Desenvolvimento/TI",
                  image: "luiskokumai",
                  fone: "(11)947245874",

@@ -39,7 +39,7 @@ final class TeamViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        navigationController?.navigationBar.topItem?.backButtonTitle = "Voltar"
+        navigationController?.navigationBar.topItem?.backButtonTitle = ""
     }
 }
 

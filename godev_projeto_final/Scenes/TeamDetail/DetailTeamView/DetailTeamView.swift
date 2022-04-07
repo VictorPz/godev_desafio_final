@@ -9,7 +9,7 @@ import UIKit
 
 protocol TeamDetailViewDelegate: DetailItemStackViewDelegate {}
 
-final class TeamDetailView: UIView {
+final class DetailTeamView: UIView {
     
     // MARK: - Components
     
@@ -93,7 +93,7 @@ final class TeamDetailView: UIView {
 
 //MARK: - Extensions
 
-extension TeamDetailView: ViewCodable {
+extension DetailTeamView: ViewCodable {
     func buildHierarchy() {
         addSubViews(personImage, descriptionLabel, verticalStack)
         verticalStack.addArrangedSubviews(phoneHorizontalStack, emailHorizontalStack, linkedinHorizontalStack, githubHorizontalStack)

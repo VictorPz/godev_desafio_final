@@ -1,5 +1,5 @@
 //
-//  CustomHomeTableViewCell.swift
+//  CustomTableViewCell.swift
 //  godev_projeto_final
 //
 //  Created by Victor Pizetta on 23/03/22.
@@ -8,11 +8,11 @@
 import UIKit
 import Kingfisher
 
-final class CustomHomeTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
     
     //MARK: - Components
     
-    static let identifier = "CustomHomeTableViewCell"
+    static let identifier = "CustomTableViewCell"
     
     private lazy var verticalStack: CustomVerticalStackView = {
         let stack  = CustomVerticalStackView(frame: .zero)
@@ -64,11 +64,19 @@ final class CustomHomeTableViewCell: UITableViewCell {
         ownerImage.layer.masksToBounds = true
         ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
     }
+    
+    func updateTeamView(team: Team){
+        ownerImage.image = UIImage(named: team.image)
+        ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
+        ownerImage.layer.masksToBounds = true
+        repositoryTitle.text = team.name
+        repositoryDescription.text = team.ocupation
+    }
 }
 
 //MARK: - Extensions
 
-extension CustomHomeTableViewCell: ViewCodable {
+extension CustomTableViewCell: ViewCodable {
     
     func buildHierarchy() {
         addSubview(ownerImage)

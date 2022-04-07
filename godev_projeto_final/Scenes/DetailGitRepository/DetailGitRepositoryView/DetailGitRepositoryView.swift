@@ -145,11 +145,11 @@ class DetailRepositoryView: UIView {
     func setupInfoRepo(infoRepo: Repo) {
         let url = URL(string: infoRepo.owner.avatarUrl)
         ownerImage.kf.setImage(with: url)
-        descriptionLabel.text = infoRepo.description
+        descriptionLabel.text = infoRepo.description ?? "No Description"
         authorNameLabel.text = infoRepo.owner.login
         countInfoLabel.text = String(infoRepo.watchersCount)
         dataInfoLabel.text = String().convertStringDateFormat(stringVariable: infoRepo.createdAt)
-        licenceInfoLabel.text = infoRepo.license?.name
+        licenceInfoLabel.text = infoRepo.license?.name ?? "No License"
         repo = infoRepo
     }
     
@@ -235,7 +235,7 @@ extension DetailRepositoryView: ViewCodable {
         ])
         
         NSLayoutConstraint.activate([
-            dataLabel.widthAnchor.constraint(equalToConstant: 140),
+            //dataLabel.widthAnchor.constraint(equalToConstant: 140),
         ])
         
         NSLayoutConstraint.activate([
