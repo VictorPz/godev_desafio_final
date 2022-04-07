@@ -64,6 +64,14 @@ final class CustomTableViewCell: UITableViewCell {
         ownerImage.layer.masksToBounds = true
         ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
     }
+    
+    func updateTeamView(team: Team){
+        ownerImage.image = UIImage(named: team.image)
+        ownerImage.layer.cornerRadius = Metrics.Radius.defaultImageCornerRadius
+        ownerImage.layer.masksToBounds = true
+        repositoryTitle.text = team.name
+        repositoryDescription.text = team.ocupation
+    }
 }
 
 //MARK: - Extensions

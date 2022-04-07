@@ -13,7 +13,7 @@ final class CustomTeamTableView: UIView{
     
         lazy var tableView: CustomTableView = {
         let table = CustomTableView()
-        table.register(CustomTeamTableViewCell.self, forCellReuseIdentifier: CustomTeamTableViewCell.identifier)
+        table.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         table.dataSource = self
         return table
     }()
@@ -45,12 +45,12 @@ extension CustomTeamTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell  = tableView.dequeueReusableCell(withIdentifier: CustomTeamTableViewCell.identifier, for: indexPath) as? CustomTeamTableViewCell else { return UITableViewCell() }
+        guard let cell  = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
         let listTeam = Team.populateData()
         let team = listTeam[indexPath.row]
         
-        cell.updateView(team: team)
+        cell.updateTeamView(team: team)
         return cell
     }
 }

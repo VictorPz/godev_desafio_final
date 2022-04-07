@@ -13,7 +13,6 @@
 		26706DAA27EE60F9003A67DD /* DetailGitRepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26706DA927EE60F9003A67DD /* DetailGitRepositoryView.swift */; };
 		26706DAD27EE69EA003A67DD /* CustomHorizontalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */; };
 		5EF55C7B27F5135500FB9247 /* CustomTeamTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */; };
-		5EF55C7D27F5137100FB9247 /* CustomTeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7C27F5137100FB9247 /* CustomTeamTableViewCell.swift */; };
 		5EF55C7F27F513B100FB9247 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF55C7E27F513B100FB9247 /* Team.swift */; };
 		641E5DF7FF5FE53264F7E3C5 /* libPods-godev_projeto_final.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEA3EF07297AB2A5465865C /* libPods-godev_projeto_final.a */; };
 		661A81BC1EB6D01CE5ACD921 /* libPods-godev_projeto_final-godev_projeto_finalUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E7FAE96EFDD84F866F3CB6 /* libPods-godev_projeto_final-godev_projeto_finalUITests.a */; };
@@ -88,7 +87,6 @@
 		26706DAC27EE69EA003A67DD /* CustomHorizontalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHorizontalStackView.swift; sourceTree = "<group>"; };
 		55E7FAE96EFDD84F866F3CB6 /* libPods-godev_projeto_final-godev_projeto_finalUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-godev_projeto_final-godev_projeto_finalUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTeamTableView.swift; sourceTree = "<group>"; };
-		5EF55C7C27F5137100FB9247 /* CustomTeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTeamTableViewCell.swift; sourceTree = "<group>"; };
 		5EF55C7E27F513B100FB9247 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		5F47E6415F48C11C16111251 /* Pods-godev_projeto_final-godev_projeto_finalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-godev_projeto_final-godev_projeto_finalUITests.release.xcconfig"; path = "Target Support Files/Pods-godev_projeto_final-godev_projeto_finalUITests/Pods-godev_projeto_final-godev_projeto_finalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		624AF3AA5D8001BE955EEBB7 /* Pods-godev_projeto_final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-godev_projeto_final.debug.xcconfig"; path = "Target Support Files/Pods-godev_projeto_final/Pods-godev_projeto_final.debug.xcconfig"; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				5EF55C7A27F5135500FB9247 /* CustomTeamTableView.swift */,
-				5EF55C7C27F5137100FB9247 /* CustomTeamTableViewCell.swift */,
 			);
 			path = TeamTableView;
 			sourceTree = "<group>";
@@ -787,7 +784,6 @@
 				8896C0DA27EB6CD1001674DD /* TeamViewController.swift in Sources */,
 				A8B5FAF427FBE8C00072D454 /* Metrics.swift in Sources */,
 				883AAF3427E8D6FA00714341 /* SceneDelegate.swift in Sources */,
-				5EF55C7D27F5137100FB9247 /* CustomTeamTableViewCell.swift in Sources */,
 				A8B5FAFB27FC0FD20072D454 /* CustomBodyLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
