@@ -24,7 +24,7 @@ O projeto conta com 5 telas sendo elas:
 * Core data
 * Kingfisher
 
-## Instalação das depêndecias
+## Instalação das dependências
 * pod install
 
 ## Futuras atualizações
