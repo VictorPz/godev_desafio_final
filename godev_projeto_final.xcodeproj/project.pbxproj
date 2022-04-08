@@ -404,7 +404,6 @@
 		8842004827FC9ADB0078F271 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A8E595FD27FE455700013C0E /* GithubServiceProtocol.swift */,
 				8896C0E227EB80AA001674DD /* ViewCodable.swift */,
 			);
 			path = Protocols;
@@ -500,6 +499,7 @@
 		A8E5960527FE493C00013C0E /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				A8E595FD27FE455700013C0E /* GithubServiceProtocol.swift */,
 				882CC20A27EA06EE009FA401 /* GithubApiService.swift */,
 			);
 			path = Api;

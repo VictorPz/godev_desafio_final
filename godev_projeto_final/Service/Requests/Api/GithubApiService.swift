@@ -31,8 +31,8 @@ class githubApiService: GithubServiceProtocol {
                 guard let jsonData = data else { return completion(.failure(.noDataAvailable)) }
                 
                 let decoder = JSONDecoder()
-                let userResponse = try decoder.decode(ApiData.self, from: jsonData)
-                completion(.success(userResponse.items ?? []))
+                let repoResponse = try decoder.decode(ApiData.self, from: jsonData)
+                completion(.success(repoResponse.items ?? []))
             } catch {
                 completion(.failure(.noProcessData))
             }
